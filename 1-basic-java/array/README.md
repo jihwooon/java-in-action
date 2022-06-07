@@ -36,7 +36,9 @@ new 연산자로 배열을 선언하면 배열을 기본 값으로 채웁니다.
 * 객체의 배열은 null 참조로 채웁니다.
 
 객체의 배열을 생성한 후에는 객체로 채워야 합니다.   
-`BigInteger[] numbers = new BigInteger[100];`  
+```java
+BigInteger[] numbers = new BigInteger[100];
+```
 아직은 어떤 BigInteger 객체도 포함하지 않은 상태다. 그저 null 참조 100개로 채운 배여일 뿐이다. 이 null 참조를 BigInteger 객체 참조로 교체해야 합니다.  
 ```java
 for (int i = 0; i < 100; i++) { 
@@ -56,5 +58,7 @@ String[] authors = {
 ```
 배열에 이름을 붙이지 않을 때도 유사한 초기화 문법을 사용합니다.
 
-`primes = new int[] { 17. 19, 23, 29 31 };`
+```java
+primes = new int[] { 17. 19, 23, 29 31 };
+```
 
