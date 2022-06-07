@@ -4,11 +4,14 @@
 package core;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        String[] names = new String[100];
+
+        for (int i = 0; i < names.length; i++) {
+            names[i] = "";
+            System.out.println("names : " + names.toString());
+            System.out.println("nameSize : " + names.length);
+        }
     }
 }
