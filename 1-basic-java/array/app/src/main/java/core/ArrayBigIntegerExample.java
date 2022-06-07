@@ -9,7 +9,7 @@ public class ArrayBigIntegerExample {
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = BigInteger.valueOf(i);
-            System.out.println("BigInteger : " + numbers.toString());
+            System.out.println("BigInteger : " + numbers);
             System.out.println("BigInteger : " + numbers.length);
         }
     }
