@@ -2,7 +2,7 @@ package core;
 
 import java.util.Scanner;
 
-public class LoopElse {
+public class LoopElseExample {
 
     public static void main(String[] args) {
         int count = 0;

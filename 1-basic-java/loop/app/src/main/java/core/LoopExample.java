@@ -2,7 +2,7 @@ package core;
 
 import java.util.Scanner;
 
-public class Loop {
+public class LoopExample {
 
     public static void main(String[] args) {
         int count = 0;
