@@ -25,7 +25,7 @@
  *     1. 정수를 default  = 0으로 설정 해 놓은다.
  *     2. Scanner 객체를 호출해서 정수를 입력 한다.
  *     3. 입력 받는 정수는 2진수, 8진수, 16진수 에 맞게 변환 시켜준다.
- *         1.
+ *         1.toString(int n , 진수);
  *     4. 받아온 정수를 16진 부동소수점(double or float)으로 둘 중 고려해서 바꿔줍니다.
  *     5. `System.out.println` 통해 값을 출력합니다.
  *
@@ -41,11 +41,11 @@ public class demo01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Integer number = scanner.nextInt();
+        int number = scanner.nextInt();
 
-        String binaryString = Integer.toBinaryString(number); // 2진수
-        String octalString = Integer.toOctalString(number); // 8진수
-        String hexString = Integer.toHexString(number); // 16진수
+        String binaryString = Integer.toString(number, 2); // 2진수
+        String octalString = Integer.toString(number, 8); // 8진수
+        String hexString = Integer.toString(number, 16); // 16진수
 
         System.out.println("2진수 : " + binaryString);
         System.out.println("8진수 : " + octalString);
