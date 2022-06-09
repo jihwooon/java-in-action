@@ -2,6 +2,7 @@ package core;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayListCopyOfExample {
@@ -34,6 +35,22 @@ public class ArrayListCopyOfExample {
         String[] names = friends.toArray(new String[0]);
         System.out.println("friends : " + Arrays.toString(names));
 
+        String elemnts = friends.toString();
+        System.out.println(elemnts);
+
+        int sum = 0;
+        int[] loops = {1, 2, 3, 4, 5};
+
+        for (int i = 0; i < loops.length; i++) {
+            sum += loops[i];
+        }
+        System.out.println("sum : " + sum);
+
+        for (int loop : loops) {
+            sum += loop;
+        }
+
+        System.out.println("forEach : " + sum);
     }
 
 }

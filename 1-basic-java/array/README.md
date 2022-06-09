@@ -134,3 +134,140 @@ System.out.println("first : " + first) //42
 * get 메서드로 호출을 하면 Integer 객체로 반환해줍니다. 객체 내부에 int 값을 반환해주는 **언박싱**이 됩니다. 
 * **참고 사항**은 래퍼 타입은 객체임으로 null 값이 허용이 됩니다. 기본 타입은 null이 허용이 되지 않아서 둘 차이를 염두 해야 합니다.
 
+### 배열과 배열 리스트 복사
+
+- **배열 복사는 무엇인가요?**
+    - 배열의 변수를 다른 배열 변수로 복사 합니다. 한 변수가 다른 변수의 배열을 참조합니다.
+
+```java
+int[] numbers = primes;
+numbers[5] = 42; //primes [5] 도 42이다. 
+```
+
+![같은 배열의 참조하는 두 배열](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bea4d9af-20ca-4147-b091-4dcb4afc0ad0/75DEBA6A-8937-46BB-9CE0-B1083DD5BC05.png)
+
+같은 배열의 참조하는 두 배열
+
+numbers = primes 두 주소를 공유해서 primes[5]와 number[5]은 같은 주소입니다.
+
+배열의 사본을 만들 때 정적 메서드 `Arrays.copyOf` 를 사용하면 됩니다.
+
+```java
+public class ArrayListCopyExample {
+
+    public static void main(String[] args) {
+
+        int[] primes = new int[]{1,2,3,4,5};
+        int[] numbers = primes;
+
+        for (int i = 0; i < numbers.length; i++) {
+            int number = numbers[i];
+            if(number == 5) {
+                System.out.println(42);
+            }
+        }
+
+        int[] copiedPrimes = Arrays.copyOf(primes, primes.length);
+
+        System.out.println(copiedPrimes.length);
+    }
+
+}
+```
+
+이외에도 배열 리스트를 참조해서 동일하 배열 요소를 복하 할 수 있습니다.
+
+```java
+public class ArrayListCopyOfExample {
+    public static void main(String[] args) {
+
+        ArrayList<String> friends = new ArrayList<>();
+        friends.add("Peter");
+        friends.add("Paul");
+        friends.add("jihwooon");
+        friends.remove(1);
+        friends.set(0, "Paul");
+        System.out.println("friends" + friends);
+        String getNumber = friends.get(0);
+        System.out.println("getNumber : " + getNumber);
+
+        for (int i = 0; i < friends.size(); i++) {
+            System.out.println("friends.get(i) : " + friends.get(i));
+        }
+
+        ArrayList<String> people = friends;
+        people.set(0, "Mary");
+
+        ArrayList<String> copiedFriends = new ArrayList<>(friends);
+
+        String result = copiedFriends.get(0);
+        System.out.println(result);
+
+        friends = new ArrayList<>(List.of("Peter", "Paul", "Mary"));
+        String[] names = friends.toArray(new String[0]);
+        System.out.println("friends : " + Arrays.toString(names));
+
+    }
+
+}
+```
+
+### 배열 알고리즘
+
+- `Array`와 `Collections` 클래스는 배열과 배열 리스트에 자주 쓰이는 알고리즘 입니다.
+
+```java
+Arrays.fill(numbers, 0)// int[] 배열
+Collections.fill(friends, ""); //ArrayList<String>
+```
+
+배열이나 배열 리스트를 정렬할 때 `sort` 메서드를 사용합니다.
+
+```java
+Arrays.sort(names);
+Collections.sort(friends);
+```
+
+`Arrays.toString` 메서드는 배열을 문자열로 표현한 결과를 돌려준다. 디버깅용으로 요긴하다.
+
+```java
+System.out.println(Arrays.toString(primes));
+// [2, 3, 5, 7, 11, 13]을 출력한다.
+```
+
+배열 리스트용 알고리즘
+
+```java
+Collections.reverse(names); // 요소들을 뒤집는다.
+Collections.shuffle(names); // 요소들을 임의로 섞는다.
+```
+
+### 향상된 for 루프 (forEacth)
+
+모든 요소들을 방문하는 일은 아주 잦다.
+
+```java
+int sum = 0;
+for (int i = 0; i < numbers.length; i++ ) {
+	sum += numbers[i];
+}
+```
+
+향상된 for 루프 단축법
+
+```java
+int sum = 0;
+for (int n : numbers) {
+		sum += n;
+}
+```
+
+향상된 for 루프의 변수는 배열의 인덱스 값이 아니라 요소를 순회한다.
+
+n 변수는 **number[0], numbers[1]** 등 할당 받는다. 배열 리스트도 향상된 for 루프에 사용할 수 있다.
+
+```java
+for (String nmae : friends ) {
+	System.out.println(name);
+}
+```
