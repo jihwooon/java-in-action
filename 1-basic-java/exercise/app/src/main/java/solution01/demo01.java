@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class demo01 {
 
     public static void main(String[] args) {
+
+        char test = 'a';
+        char test2 = 'J'+ 1;
+        System.out.println("test : " + test);
+        System.out.println("tes2t : " + test2);
         Scanner scanner = new Scanner(System.in);
 
         int number = scanner.nextInt();

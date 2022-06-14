@@ -271,3 +271,19 @@ for (String nmae : friends ) {
 	System.out.println(name);
 }
 ```
+
+### 명령줄 인수
+
+
+```java
+public class Greeting {
+  public static void main(String[] args) {
+          for(int i = 0; i < args.length; i++) {
+          String arg = args[i];
+          if (arg.equals("-h")) arg = "Hello";
+          else if (arg.equals("-g")) arg = "Goodbye";
+          System.out.println(arg);
+      }
+   }
+}
+```
