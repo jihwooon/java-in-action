@@ -9,6 +9,22 @@ public class App {
     }
 
     public static void main(String[] args) {
+
+        Employee employee = new Employee();
+        employee.getId();
+        System.out.println(employee.getName());
+        System.out.println("employee_Id : "+ employee.getId());
+
+        Employee employee1 = new Employee();
+        System.out.println("employee1_Id : " + employee1.getId());
+
+
         System.out.println(new App().getGreeting());
+
+        Invoice invoice = new Invoice(); // Invoice는 메서드를 통해서만 접근이 가능하다.
+        invoice.addItem("Blackwell Toaster", 2, 24.95);
+        invoice.addItem("ZapXpress Microwave Oven", 1, 49.95);
+        invoice.print();
+
     }
 }
