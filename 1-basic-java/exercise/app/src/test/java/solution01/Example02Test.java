@@ -29,10 +29,8 @@ public class Example02Test {
         return answer;
     }
 
-
     @Test
     void result() {
-
         assertThat(angleNormalization(0,359)).isEqualTo(359);
         assertThat(angleNormalization(1,359)).isEqualTo(0);
         assertThat(angleNormalization(2,359)).isEqualTo(1);
