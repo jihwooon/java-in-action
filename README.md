@@ -37,20 +37,15 @@
 
 [Trello - 코어자바9](https://trello.com/c/It5nwuui) 내에 CheckList 을 확인 후 전날 계획을 확인합니다.  
 
-한 강의가 들을 때는 Input 방식이 아닌 Output 방식(인출 학습)으로 공부를 진행 할 예정입니다.
-강의 시작 전에 브랜치를 새로 생성합니다. 강의가 끝 난 후에는 git 브랜치를 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 구현을 도전합니다.
+공부 방법 진행은 Input 방식이 아닌 Output 방식(인출 학습)으로 공부를 진행 할 예정입니다.  
 
-```java
-git branch -a // 모든 로컬 브랜치 확인
-git checkout main
+책을 읽고 한 챕터당 5문제 이상 만듭니다.
 
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+[코어 자바 9 문제](https://docs.google.com/spreadsheets/d/1O0M3NmZwuC1nvRiQng2tN3pUCNQMFmJ82aoIzYpy3N8/edit?usp=sharing)
 
-강의 끝난 후에 필수 개념 및 중요한 내용은 README.md로 정리합니다.
+책을 읽고 마지막 챕터에 예제 문제를 풉니다.
 
-마지막에 TIL 작성에서 오늘 배운 내용에 대해서 Fact/Feeling/Finding 으로 정리 해 기록을 남깁니다.
+TIL 작성에서 오늘 배운 내용에 대해서 Fact/Feeling/Finding 으로 정리 해 기록을 남깁니다.
 
 ### 이외 고려사항들 (Other Considerations)
 이해가 가지 않거나 아직 모르는 개념은 잠시 메모 해놓고 시간 될 때 다시 확인 합니다.  
@@ -59,4 +54,4 @@ ex) git checkout -b apply-feedback
 
 ### 마일스톤 (Milestones)
 
-7/26 : 인터페이스와 람다 표현식 읽기 및 예제 풀기
+7/26 : 인터페이스, 인터페이스의 정적 메서드, 기본 메서드, 비공개 메서드 읽고 예제 풀이
