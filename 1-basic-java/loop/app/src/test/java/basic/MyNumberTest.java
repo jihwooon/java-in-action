@@ -16,14 +16,15 @@ class MyNumberTest {
         @Nested
         @DisplayName("반환하는 값이 홀수이면")
         class Context_with_odd_number {
+            private final int number = 9;
 
-          @Test
-          @DisplayName("True를 반환한다.")
-          void it_returns_true() {
-              MyNumber myNumber = new MyNumber(9);
-              assertThat(myNumber.isPrime()).isTrue();
+            @Test
+            @DisplayName("True를 반환한다.")
+            void it_returns_true() {
+                MyNumber myNumber = new MyNumber(number);
+                assertThat(myNumber.isPrime()).isTrue();
 
-          }
+            }
         }
 
         @Nested
@@ -42,12 +43,22 @@ class MyNumberTest {
         @Nested
         @DisplayName("파라미터 값 2이하이면")
         class Context_with_below_number_of_two {
+            private final int x = 2;
+            private final int y = 1;
+            private final int z = 0;
+
 
             @Test
             @DisplayName("False를 반환한다.")
             void it_returns_false() {
-                MyNumber myNumber = new MyNumber(2);
+                MyNumber myNumber = new MyNumber(x);
                 assertThat(myNumber.isPrime()).isFalse();
+
+                MyNumber myNumber1 = new MyNumber(y);
+                assertThat(myNumber1.isPrime()).isFalse();
+
+                MyNumber myNumber2 = new MyNumber(z);
+                assertThat(myNumber2.isPrime()).isFalse();
 
             }
         }
@@ -60,11 +71,11 @@ class MyNumberTest {
         @Nested
         @DisplayName("테스트 대상이 놓인 상황을 설명한다.")
         class Context_with_real {
-          @Test
-          @DisplayName("테스트 대상의 행동을 설명한다.")
-          void it_returns_a_valid_complex() {
+            @Test
+            @DisplayName("테스트 대상의 행동을 설명한다.")
+            void it_returns_a_valid_complex() {
 
-          }
+            }
         }
     }
 }
