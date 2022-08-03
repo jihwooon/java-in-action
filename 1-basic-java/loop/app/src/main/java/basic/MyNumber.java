@@ -1,8 +1,5 @@
 package basic;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class MyNumber {
 
     int number;
