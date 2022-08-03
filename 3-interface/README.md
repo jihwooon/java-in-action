@@ -14,7 +14,13 @@
 <details>
 <summary>인터페이스는 어떻게 선언하는가?</summary>
 
- > dddd
+ > 
+</details>
+
+
+<details>
+<summary>캐스트가 필요한 이유는?</summary>
+>
 </details>
 
 
