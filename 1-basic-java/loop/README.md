@@ -253,3 +253,7 @@ exit: {
 
 > 많은 개발자가 break와  continue 문을 헷갈립니다. 그런데 이 문장들은 순전히 선택 사항입니다.
 >
+
+## Reference
+* 가장 빨리 만나는 코어 자바 9
+* [【한글자막】 완전 초보자를 위한 Java 프로그래밍 : 단기간에 Java 완벽 정복](https://www.udemy.com/share/105OwM3@0LncLw3OaZIvAMixrCnoh4ABoVx65NoliRhSKMDDPmBRqOPrOqJzOPgU1CCGbKPlwA==/)
