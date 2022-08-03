@@ -1,5 +1,7 @@
 package core;
 
+import org.testng.annotations.Test;
+
 import java.math.BigInteger;
 
 public class ArrayBigIntegerExample {
