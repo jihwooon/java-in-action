@@ -64,8 +64,10 @@ public class MyNumber {
 
     public static void main(String[] args) {
         MyNumber myNumber = new MyNumber(9);
+
         boolean isPrime = myNumber.isPrime();
         System.out.println("isPrime " + isPrime);
+
         int sum = myNumber.sumUptoN();
         System.out.println("sum = " + sum);
 
