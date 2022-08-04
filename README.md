@@ -57,3 +57,7 @@ TIL 작성에서 오늘 배운 내용에 대해서 `Fact/Feeling/Finding` 으로
 
 7/26 : 인터페이스, 인터페이스의 정적 메서드, 기본 메서드, 비공개 메서드 읽고 예제 풀이  
 8/04 : 자바 프로그래밍 조건문 강의 및 정리
+
+### Reference
+
+* [Java Specification](https://docs.oracle.com/javase/specs/jls/se17/html/index.html)
