@@ -19,6 +19,7 @@
  * `13-internationalization` : 국제화
  * `14-compiling-and-scripting` : 컴파일링과 스크립팅
  * `15-Java-platform-module-system` : 자바 플랫폼 모듈 시스템
+ * `Exercise` 예제 문제 풀이
 
 ### 배경 (Background)
 자바의 기본 지식의 중요하다고 느꼈습니다. 코어 자바 9 책 내용 내에 기본 지식을 습들을 하여서 부족했던 자바의 기본 지식을 채워 나아가기 위해서 공부합니다.  
