@@ -11,7 +11,6 @@ public class Ch1_2 {
         return Math.floorMod(position, 360);
     }
 
-
     public int solution1(int position) {
 
         return position % 360;

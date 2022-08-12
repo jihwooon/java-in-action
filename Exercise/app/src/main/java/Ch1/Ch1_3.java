@@ -17,6 +17,6 @@ public class Ch1_3 {
 
     public int solution1(int a, int b, int c) {
 
-        return Math.max(a, Math.max(b,c));
+        return Math.max(a, Math.max(b, c));
     }
 }
