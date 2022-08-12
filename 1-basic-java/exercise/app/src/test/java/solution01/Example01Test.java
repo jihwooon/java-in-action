@@ -30,9 +30,6 @@ class Example01Test {
 
     private int bineary_search(String str, int spread) {
 
-
-
-
         return str.charAt(spread) - '0';
     }
 
