@@ -65,3 +65,4 @@ public class demo01 {
 * 8진수는 `Integer.toOctalString();`
 * 16진수는 `Integer.toHexString();`  
 를 사용해서 해결해 볼 수 있습니다.
+재귀 함수로 풀어 볼수 있을 것 같다.
