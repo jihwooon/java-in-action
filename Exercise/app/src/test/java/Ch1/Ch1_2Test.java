@@ -54,9 +54,9 @@ class Ch1_2Test {
             void it_returns_a_valid_positive_number() {
                 assertThat(ch1_2.solution1(1)).isEqualTo(1);
                 assertThat(ch1_2.solution1(2)).isEqualTo(2);
-                assertThat(ch1_2.solution1(11)).isEqualTo(11);
-                assertThat(ch1_2.solution1(12)).isEqualTo(12);
-                assertThat(ch1_2.solution1(13)).isEqualTo(13);
+                assertThat(ch1_2.solution1(3)).isEqualTo(3);
+                assertThat(ch1_2.solution1(4)).isEqualTo(4);
+                assertThat(ch1_2.solution1(5)).isEqualTo(5);
 
             }
 
