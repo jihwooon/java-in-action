@@ -1,4 +1,4 @@
-package solution02;
+package Ch2;
 
 import static java.lang.Math.floorMod;
 

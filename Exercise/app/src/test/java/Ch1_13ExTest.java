@@ -2,6 +2,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import Ch1.Ch1_13_ex;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -10,7 +11,7 @@ import java.io.PrintStream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class Ch1_13Test {
+class Ch1_13ExTest {
     private static PrintStream originOut;
     private static InputStream originalIn;
     private static ByteArrayOutputStream out;
@@ -35,8 +36,8 @@ class Ch1_13Test {
 
     @Test
     void check() {
-        Ch1_13.main(null);
-        var parts = this.out.toString().trim().split(" ");
+        Ch1_13_ex.main(null);
+        String[] parts = this.out.toString().trim().split(" ");
         assertThat(parts.length).isEqualTo(6);
         var last = 0;
         for (String part : parts) {

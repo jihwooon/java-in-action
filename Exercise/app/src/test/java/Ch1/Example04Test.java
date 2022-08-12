@@ -1,8 +1,6 @@
-package solution01;
+package Ch1;
 
 import org.junit.jupiter.api.Test;
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

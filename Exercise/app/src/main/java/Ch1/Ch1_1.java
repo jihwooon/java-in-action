@@ -1,8 +1,8 @@
-package solution01;
+package Ch1;
 
 import java.util.Scanner;
 
-public class demo01 {
+public class Ch1_1 {
 
     public static void main(String[] args) {
 
