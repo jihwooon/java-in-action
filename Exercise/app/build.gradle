@@ -25,6 +25,18 @@ dependencies {
 
     // AssertJ
     testImplementation 'org.assertj:assertj-core:3.18.1'
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:4.3.1'
+
+    // Mockito Extension
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.6.1'
+
+    testImplementation 'junit:junit:4.13.1'
+
+    testImplementation platform('org.junit:junit-bom:5.6.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:'
 }
 
 application {
