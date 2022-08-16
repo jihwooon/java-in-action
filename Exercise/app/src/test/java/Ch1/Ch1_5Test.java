@@ -41,7 +41,7 @@ class Ch1_5Test {
 
     @Test
     void result() {
-        Ch1_5.main(null);
+        Ch1_5_Ex.main(null);
         assertThat(this.want).isEqualTo(this.out.toString());
     }
 
