@@ -7,13 +7,9 @@ package Ch1;
 
 public class Ch1_9 {
 
-    String location = "Java";
-    String greeting = "Hello " + location;
-
-
     public boolean solution(String s, String t) {
 
-        if(s.equals(t)) {
+        if (s.equals(t)) {
             System.out.println("s.equals(t) : " + s.equals(t));
             return true;
         }
@@ -22,10 +18,11 @@ public class Ch1_9 {
     }
 
     public boolean solution1(String s, String t) {
-        if(s == t) {
+        if (s == t) {
             System.out.println("s == t : " + s == t);
             return true;
         }
+    
         return false;
     }
 }
