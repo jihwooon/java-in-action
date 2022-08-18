@@ -1,9 +1,17 @@
 package test.ch2;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
+import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -21,9 +29,11 @@ import static org.hamcrest.core.IsNull.notNullValue;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.hamcrest.core.StringEndsWith.endsWith;
 import static org.hamcrest.core.StringStartsWith.startsWith;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class AssertTest {
 
@@ -152,6 +162,66 @@ public class AssertTest {
 
         assertThat(names, not(everyItem(endsWith("y"))));
 
+    }
+
+    @Test
+    @Ignore
+    public void location() {
+        Point point = new Point(4, 5);
+
+    }
+
+    @Test
+    @Ignore
+    public void classAssertions() {
+        Account account = new Account("acct namex");
+        assertEquals("acct name", account.getName());
+    }
+
+    @Test
+    public void throwsWhenWithdrawingTooMuchTry() {
+        try {
+            account.withdraw(100);
+            fail();
+        }
+        catch (InsufficientFundsException exception) {
+            assertThat(exception.getMessage(), equalTo("balance only 0"));
+        }
+    }
+
+    @Test
+    public void readsFromTestFile() throws IOException {
+        String filename = "test.txt";
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+        writer.write("test data");
+        writer.close();
+    }
+
+    @After
+    public void deleteForReadsFromTestFile() {
+        new File("test.txt").delete();
+    }
+
+    @Test
+    @Ignore("don't forget me!")
+    public void somethingWeCannotHandleRightNow() {
+
+    }
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    @Test
+    public void exceptionRule() {
+        thrown.expect(InsufficientFundsException.class);
+        thrown.expectMessage("balance only 0");
+
+        account.withdraw(100);
+    }
+
+    @Test
+    public void doubles() {
+        assertEquals(9.7, 10.0 - 0.3, 0.005);
     }
 
 }
