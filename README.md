@@ -20,6 +20,7 @@
  * `14-compiling-and-scripting` : 컴파일링과 스크립팅
  * `15-Java-platform-module-system` : 자바 플랫폼 모듈 시스템
  * `Exercise` 예제 문제 풀이
+ * `Java-With-JUnit` 자바와 JUnit 단위 테스트 
 
 ### 배경 (Background)
 자바의 기본 지식의 중요하다고 느꼈습니다. 코어 자바 9 책 내용 내에 기본 지식을 습들을 하여서 부족했던 자바의 기본 지식을 채워 나아가기 위해서 공부합니다.  
@@ -27,6 +28,7 @@ JVM 동작원리, 멀티스레드와 스레드 차이, 비동기 등 면접에�
 
 ### 목표 (Goals)
 자바의 필요한 기술을 습득합니다. 자바의 중요성이 크기 때문에 자바의 기술을 빠짐없이 익히고 배웁니다.
+테스트 코드 작성 및 TDD 학습도 같이 합니다.
 
 
 ### 목표가 아닌 것 (Non-goals)
@@ -58,7 +60,9 @@ TIL 작성에서 오늘 배운 내용에 대해서 `Fact/Feeling/Finding` 으로
 
 7/26 : 인터페이스, 인터페이스의 정적 메서드, 기본 메서드, 비공개 메서드 읽고 예제 풀이  
 8/04 : 자바 프로그래밍 조건문 강의 및 정리
+8/19 : 자바와 JUnit을 활용한 실용주의 단위 테스트 추가
 
 ### Reference
 
 * [Java Specification](https://docs.oracle.com/javase/specs/jls/se17/html/index.html)
+* [JUnit5](https://junit.org/junit5/docs/current/user-guide/#overview)
