@@ -34,6 +34,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static test.ch2.PointMatcher.isNear;
 
 public class AssertTest {
 
@@ -169,6 +170,7 @@ public class AssertTest {
     public void location() {
         Point point = new Point(4, 5);
 
+        assertThat(point, isNear(4.0, 5.0));
     }
 
     @Test
