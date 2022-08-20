@@ -1,8 +1,4 @@
-package core;
-
-import java.util.Random;
-import java.util.Scanner;
-import java.util.stream.LongStream;
+package example;
 
 public class SystemTestCode {
 
