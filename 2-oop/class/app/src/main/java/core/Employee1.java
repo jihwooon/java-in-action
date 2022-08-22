@@ -2,7 +2,7 @@ package core;
 
 import java.util.Random;
 
-public class Employee {
+public class Employee1 {
 
     private static int lastId = 0;
     private int id;
@@ -12,18 +12,12 @@ public class Employee {
 
     private static final Random generator = new Random();
 
-    public Employee() {
-//        lastId++;
-//        id = lastId;
-        id = 1 + generator.nextInt(1_000_000);
+    public Employee1() {
+        id = 1 + generator.nextInt(1_00_000);
     }
 
-//    private int generateId() {
-//        id += 1;
-//        return id;
-//    }
 
-    public Employee(String name, double salary) {
+    public Employee1(String name, double salary) {
         this.name = name;
         this.salary = salary;
     }
@@ -45,7 +39,11 @@ public class Employee {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public static void main(String[] args) {
+
+        Employee1 employee1 = new Employee1();
+        int id1 = employee1.getId();
+
+        System.out.println("id1 : " + id1);
     }
 }

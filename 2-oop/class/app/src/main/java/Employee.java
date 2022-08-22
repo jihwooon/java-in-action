@@ -35,7 +35,7 @@ public class Employee {
         Employee fred = new Employee("Fred", 50000);
         fred.raiseSalary(10);
         fred.generated();
-        System.out.println(fred.getId());
+        System.out.println(fred.getId()); // 1
         System.out.println(fred.getName());
         System.out.println(fred.getSalary());
 
@@ -43,8 +43,15 @@ public class Employee {
         Employee fred1 = new Employee("Fred", 50000);
         fred1.raiseSalary(10);
         fred1.generated();
-        System.out.println(fred1.getId());
+        System.out.println(fred1.getId());// 2
         System.out.println(fred1.getName());
         System.out.println(fred1.getSalary());
+
+        Employee fred2 = new Employee("Fred", 50000);
+        fred2.raiseSalary(10);
+        fred2.generated();
+        System.out.println(fred2.getId());// 2
+        System.out.println(fred2.getName());
+        System.out.println(fred2.getSalary());
     }
 }

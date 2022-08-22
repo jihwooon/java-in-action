@@ -3,14 +3,11 @@ package core;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.NoSuchElementException;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-class EmployeeTest {
+class Employee1Test {
 
-    private Employee employee;
+    private Employee1 employee1;
     private String NAME = "철수";
     private double SALARY = 50000;
     private int id = 1;
@@ -19,8 +16,8 @@ class EmployeeTest {
 
     @BeforeEach
     void setUp() {
-        employee = new Employee(NAME, SALARY);
-        employee.raiseSalary(10);
+        employee1 = new Employee1(NAME, SALARY);
+        employee1.raiseSalary(10);
 //        employee.getId();
         path.substring("/task/".length());
         System.out.println(path);
@@ -31,8 +28,8 @@ class EmployeeTest {
 
     @Test
     void creation() {
-        assertThat(employee.getName()).isEqualTo(NAME);
-        assertThat(employee.getSalary()).isEqualTo(55000.0);
+        assertThat(employee1.getName()).isEqualTo(NAME);
+        assertThat(employee1.getSalary()).isEqualTo(55000.0);
 //        assertThat(employee.getId()).isEqualTo(id);
         assertThat(path.length()).isEqualTo(0);
     }

@@ -10,9 +10,9 @@ public class EvilManager {
         generator = new Random();
     }
 
-    public void giveRandomRaise(Employee employee) {
+    public void giveRandomRaise(Employee1 employee1) {
         double percentage = 10 * generator.nextDouble();
-        employee.raiseSalary(percentage);
+        employee1.raiseSalary(percentage);
     }
 
     public void increaseRandomly(double x) { // 의도한 대로 작동하지 않는다.
@@ -20,8 +20,8 @@ public class EvilManager {
         x += amount;
     }
 
-    public void replaceWithZombie(Employee employee) {
-        employee = new Employee("", 0);
+    public void replaceWithZombie(Employee1 employee1) {
+        employee1 = new Employee1("", 0);
     }
 
 }

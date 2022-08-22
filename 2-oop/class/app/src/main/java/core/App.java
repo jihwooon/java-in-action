@@ -10,12 +10,12 @@ public class App {
 
     public static void main(String[] args) {
 
-        Employee employee = new Employee();
+        Employee1 employee = new Employee1();
         employee.getId();
         System.out.println(employee.getName());
         System.out.println("employee_Id : "+ employee.getId());
 
-        Employee employee1 = new Employee();
+        Employee1 employee1 = new Employee1();
         System.out.println("employee1_Id : " + employee1.getId());
 
 
