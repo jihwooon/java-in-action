@@ -21,7 +21,7 @@ class EmployeeTest {
     void setUp() {
         employee = new Employee(NAME, SALARY);
         employee.raiseSalary(10);
-        employee.getId();
+//        employee.getId();
         path.substring("/task/".length());
         System.out.println(path);
 //        System.out.println(employee.getName());
@@ -33,14 +33,14 @@ class EmployeeTest {
     void creation() {
         assertThat(employee.getName()).isEqualTo(NAME);
         assertThat(employee.getSalary()).isEqualTo(55000.0);
-        assertThat(employee.getId()).isEqualTo(id);
+//        assertThat(employee.getId()).isEqualTo(id);
         assertThat(path.length()).isEqualTo(0);
     }
 
     @Test
     void EvilManagerCreation() {
         EvilManager evilManager = new EvilManager();
-        evilManager.giveRandomRaise(employee);
+//        evilManager.giveRandomRaise(employee);
         System.out.println(evilManager);
 
     }
