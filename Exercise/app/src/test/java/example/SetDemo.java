@@ -11,7 +11,7 @@ public class SetDemo {
     public static void main(String[] args) {
         // 집합
 //        Set<String> badWords = new HashSet<>();
-//        badWords.add("sex");
+//        badWords.add("java");
 //        badWords.add("drugs");
 //        badWords.add("c++");
 //
