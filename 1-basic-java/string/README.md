@@ -18,6 +18,51 @@ U+FFFF 넘는 문자는 **'대용 문자'**로 분류 되어서 코드의 공간
 
 어려움을 해결 하기 위해서 자바 프로그래밍 언어는 UTF-16 인코딩을 사용하여 16비트 코드 단위의 시퀀스로 텍스트를 나타냅니다.  
 
+# 문자열
+> 문자열은 알고리즘 문제에서도 많이 사용된다. 문자열의 API를 꼭 알고 있어야 합니다.
+
+문자열을 연결 할 때 `+ 연산자`를 사용합니다.
+
+```java
+String location = "Java";
+String greeting = "Hello" + location;
+// "Hello Java"
+```
+
+문자열과 다른값을 연결하면 문자열로 변환이 된다.
+
+```java
+int age = 42;
+String output = age + " years";
+// "42 years"
+```
+
+문자열을 연결하는 것은 비효율적이다. StringBuilder를 사용하면 효율적이다.
+
+```java
+StirngBuilder builder = new StringBuilder();
+while(문자열이 있으면) {
+    builder.append(다음 문자열);    
+}
+
+String result = builder.toString();
+```
+
+문자열 분리 할 때 `substring` 메서드를 사용한다.
+
+```java
+String greeting = "Hello, World";
+greetion.substring(7, 12); // "World"로 설정한다.
+```
+
+문자열에서 부분 문자열을 구분자로 분리해서 모두 `split` 메서드를 사용해 부분 문자열의 배열로 추출한다.  
+정규 표현식이든 분리자든 둘 다 사용할 수 있다.
+```java
+String names = "Peter, Paul, Mary";
+String[] result = names.split(", ");
+//문자열 세 개로 구성된 배열 ["Peter", "Paul,"Mary"]
+```
+
 ## Reference
 * 가장 빨리 만나는 코어 자바 9 -p58
 * The Java® Language Specification  *Java SE 18 Edition* - 3.1 Unicode, 
