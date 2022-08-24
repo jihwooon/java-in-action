@@ -8,6 +8,5 @@ public class Ch2_5 {
 
     public static class Point {
 
-
     }
 }

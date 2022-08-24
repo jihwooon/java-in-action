@@ -6,24 +6,23 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /*
-* 달력 출력 프로그램을 수정해서 한 주가 일요일부터 시작하게 하라.
-* 또 줄 넘김은 끝에 한 번만 출력하게 만들어라
-*/
-
+ * 달력 출력 프로그램을 수정해서 한 주가 일요일부터 시작하게 하라.
+ * 또 줄 넘김은 끝에 한 번만 출력하게 만들어라
+ */
 public class Ch2_1 {
 
     public static void main(String[] args) {
         var today = LocalDate.now();
-        // Print calendar header of month & year
+
         System.out.println(today.getMonth().toString() + " " + today.getYear());
         var date = LocalDate.of(today.getYear(), today.getMonth(), 1);
         var order = buildDayAbbrev();
-        // print the abbreviations for days of the week starting from Sunday.
+
         for (var abbrev : order.values()) {
             System.out.printf("%s\t", abbrev);
         }
         System.out.println();
-        // Adjust printing position to accommodate Sunday start
+
         var pos = date.getDayOfWeek().getValue() == 7 ? 0 : date.getDayOfWeek().getValue();
         for (var i = 0; i < pos; i++) {
             System.out.print(" \t");

@@ -1,7 +1,6 @@
 package Ch2;
 
 
-import java.io.Console;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,7 +10,6 @@ Random 클래스의 nextInt 메서드는 어떤가?
 */
 
 public class Ch2_2 {
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

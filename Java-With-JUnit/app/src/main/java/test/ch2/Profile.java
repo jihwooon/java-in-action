@@ -32,17 +32,27 @@ public class Profile {
                     criterion.getWeight() == Weight.DontCare ||
                             answer.match(criterion.getAnswer());
 
-            if (!match && criterion.getWeight() == Weight.MustMatch) {
-                kill = true;
-            }
-            if (match) {
-                score += criterion.getWeight().getValue();
-            }
+            kill = isKill(kill, criterion, match);
+            extracted(criterion, match);
             anyMatches |= match;
         }
+
         if (kill)
             return false;
         return anyMatches;
+    }
+
+    private void extracted(Criterion criterion, boolean match) {
+        if (match) {
+            score += criterion.getWeight().getValue();
+        }
+    }
+
+    private static boolean isKill(boolean kill, Criterion criterion, boolean match) {
+        if (!match && criterion.getWeight() == Weight.MustMatch) {
+            kill = true;
+        }
+        return kill;
     }
 
     public int score() {
