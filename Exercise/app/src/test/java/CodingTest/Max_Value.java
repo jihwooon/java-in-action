@@ -27,7 +27,7 @@ public class Max_Value {
 
         int[] arr = new int[9];
 
-        for(int i = 0; i <= arr.length - 1; i++) {
+        for (int i = 0; i <= arr.length - 1; i++) {
             arr[i] = Integer.parseInt(bs.readLine());
 
             if (max < arr[i]) {

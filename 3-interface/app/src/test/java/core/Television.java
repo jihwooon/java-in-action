@@ -1,6 +1,6 @@
 package core;
 
-public class Television  implements RemoteControl{
+public class Television implements RemoteControl {
     @Override
     public void turnOn() {
         throw new UnsupportedOperationException("Television#turnOn not implemented yet !!");

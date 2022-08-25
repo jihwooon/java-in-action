@@ -27,6 +27,8 @@ class Example1Test {
 
     public String[] solution(String[] str) {
 
+        
+
         return null;
     }
 

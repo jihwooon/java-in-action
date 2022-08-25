@@ -34,6 +34,12 @@ public class Ch2_1 {
         }
     }
 
+    /**
+     * 주말을 Key와 Value로 등록한다.
+     *
+     * @author 안지환
+     * @return 한 주 등록
+     */
     private static Map<DayOfWeek, String> buildDayAbbrev() {
         var result = new LinkedHashMap<DayOfWeek, String>(7);
         result.put(DayOfWeek.SUNDAY, "Sun");
