@@ -24,22 +24,22 @@ public class UpperCaseChange {
         // char Array를 만든다.
         char[] chars = str.toCharArray();
 
-        for (int i = 0; i < chars.length; i++) {
-            char x = chars[i];
-            if (x >= 97 && x <= 122) {
-                answer += (char) (x - 32);
-            } else {
-                answer += (char) (x + 32);
-            }
-        }
-
-//        for (char x : chars) {
-//            if (Character.isLowerCase(x)) {
-//                answer += Character.toUpperCase(x);
+//        for (int i = 0; i < chars.length; i++) {
+//            char x = chars[i];
+//            if (x >= 97 && x <= 122) {
+//                answer += (char) (x - 32);
 //            } else {
-//                answer += Character.toLowerCase(x);
+//                answer += (char) (x + 32);
 //            }
 //        }
+
+        for (char x : chars) {
+            if (Character.isLowerCase(x)) {
+                answer += Character.toUpperCase(x);
+            } else {
+                answer += Character.toLowerCase(x);
+            }
+        }
 
         return answer;
     }
