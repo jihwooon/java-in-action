@@ -1,4 +1,4 @@
-package core;
+package core.sec01;
 
 public class SquareSequence implements IntSequence {
     private int i;
@@ -13,4 +13,5 @@ public class SquareSequence implements IntSequence {
         i++;
         return i * i;
     }
+
 }

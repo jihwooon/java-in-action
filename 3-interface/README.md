@@ -1,66 +1,39 @@
-# 인터페이스와 람다 표현식
+## 인터페이스와 람다 표현식
 
-### 핵심 내용
+마지막 수정일:  2022.08.28  
+JIRA Epic: [TM-57: 3장 인터페이스와 람다 표현식](https://jihwon-ahn.atlassian.net/browse/TM-57)
 
-> 1. 인터페이스는 구현 클래스에서 반드시 구현해야 하는 메서드를 명시한다.
-> 2. 인터 페이스는 해당 인터페이스를 구현하는 모든 클래스의 슈퍼 타입이다. 따라서 구현 클래스의 인터페이스를 인터페이스 타입 변수에 할당할 수 있다.
-> 3. 자바는 객체 지향과 함수형 프로그래밍 사이의 간극을 메우는 함수 표현식을 지원한다.
+### 배경 (Background)
 
-### 인터페이스
+코어 자바 9 내용 중 인터페이스와 람다 표현식을 공부 할 필요성을 느꼈습니다.
 
-인터페이스는 개발 코드를 수정하지 않고, 사용하는 객체를 변경 할 수 있도록 하기위해서 사용합니다.
+특히나 람다 표현식은 함수형 을 공부하다보면 자주 등장해서 함수형을 이해 할려면 람다 표현식을 알 필요가 있습니다. 
 
-### 인터페이스 선언
+### 목표 (Goals)
 
-IntSequence 시퀀스는 다양한 형태를 취할 수 있다.
+인터페이스의 이해와 람다 표현식을 표현식을 이해 합니다.
 
-* 사용자가 제공한 정수 시퀀스
-* 임의의 정수 시퀀스
-* 소수 시퀀스
-* 정수 배열에 들어 있는 시퀀스
+인터페이스의 역활이 개발의 어떤 역활을 하는지 람다 표현식을 사용함으로써 기존에 함수를 어떻게 간략하게 표현하는지에 대해서 이해 할 수 있습니다. 
 
-```java
-public interface IntSequence {
-    boolean hasNext();
+### 학습할 것
 
-    int next();
-}
+* 인터페이스 정의하는 방법  
+* 인터페이스 구현하는 방법
+* 인터페이스 레퍼런스를 통해 구현체를 사용하는 방법
+* 인터페이스 상속
+* 인터페이스의 기본 메소드 (Default Method), 자바 8
+* 인터페이스의 static 메소드, 자바 8
+* 인터페이스의 private 메소드, 자바 9
+* 람다식 사용법
+* 함수형 인터페이스
+* Variable Capture
+* 메소드, 생성자 레퍼런스
 
+### 마일스톤 (Milestones)
 
-public static double average(IntSequence seq, int n) {
-    int count = 0;
-    double sum = 0;
-    while (seq.hasNext() && count < n) {
-        count++;
-        sum += seq.next();
-    }
-    return count == 0 ? 0 : sum / count;
-}
-```
+8/27 : 인터페이스  
+8/28 :  인터페이스의 정적 메서드, 기본메서드, 비공개 메서드
 
-> 인터페이스의 모든 메서드는 public이 기본으로 설정 되어 있다.
-> 선언 할 필요는 없지만 의도를 명학하게 드러내려면 public으로 선언하기도 한다. 
+### 참조
 
-### 인터페이스 구현
-average 메서드에 사용하는 클래스를 살펴보자
-IntSequence 인터페이스를 구현해야 한다.
-
-```java
-public class SquareSequence implements IntSequence {
-    private int i;
-    
-    public boolean hasNext() {
-        return true;
-    }
-    
-    public int next() {
-        i++;
-        return i * i;
-    }
-    
-}
-```
-
-
-
-### 인터페이스의 정적 메서드, 기본 메서드, 비공개 메서드
+* [The Java™ Tutorials (oracle.com)](https://docs.oracle.com/javase/tutorial/index.html)

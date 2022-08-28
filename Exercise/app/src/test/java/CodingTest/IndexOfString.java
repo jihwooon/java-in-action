@@ -2,8 +2,6 @@ package CodingTest;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -19,12 +17,11 @@ public class IndexOfString {
     public String solution(String str) {
         String answer = "";
         int m = Integer.MIN_VALUE;
-        System.out.println(m);
         String[] s = str.split(" ");
-        System.out.println(Arrays.toString(s));
 
         for (String x : s) {
             int len = x.length();
+            System.out.println("len = " + len);
             if (len > m) {
                 m = len;
                 answer = x;
@@ -33,9 +30,32 @@ public class IndexOfString {
         return answer;
     }
 
+    public String solution1(String str) {
+        String answer = "";
+        int m = Integer.MIN_VALUE;
+        int pos = Integer.MIN_VALUE;
+
+        while ((pos = str.indexOf(' '))!= -1) {
+            String tmp = str.substring(0, pos);
+            int len = tmp.length();
+            if (len > m) {
+                m = len;
+                answer = tmp;
+            }
+            str = str.substring(pos+1);
+        }
+
+        if(str.length() > m) {
+            answer = str;
+        }
+        return answer;
+    }
+
     @Test
     void result() {
-        assertThat(solution("it is time to study")).isEqualTo("study");
+//        assertThat(solution("it is time to study")).isEqualTo("study");
+//        assertThat(solution("it is timeises to study")).isEqualTo("timeises");
+        assertThat(solution1("it is timeises to study")).isEqualTo("timeises");
     }
 }
 

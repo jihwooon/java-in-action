@@ -1,4 +1,4 @@
-package core;
+package core.sec01;
 
 public class DigitSequence implements IntSequence {
     private int number;
@@ -9,15 +9,15 @@ public class DigitSequence implements IntSequence {
 
     @Override
     public boolean hasNext() {
-        return number !=0;
+        return number != 0;
     }
 
     @Override
     public int next() {
         int result = number % 10;
         number /= 10;
-        return result;
 
+        return result;
     }
 
     public int rest() {

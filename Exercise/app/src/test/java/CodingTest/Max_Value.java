@@ -36,6 +36,14 @@ public class Max_Value {
             }
         }
 
+
+//        for(int x : arr) {
+//            if(max < x) {
+//                max = x;
+//                System.out.println("max = " + max);
+//            }
+//        }
+//
         System.out.println(max);
         System.out.println(maxNum);
 

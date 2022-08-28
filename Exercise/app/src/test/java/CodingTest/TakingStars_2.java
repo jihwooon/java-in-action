@@ -28,10 +28,12 @@ public class TakingStars_2 {
         br.close();
 
         for (int i = 1; i <= N; i++) {
+            // for문 왼쪽에서 채우기
             for (int j = 1; j <= N - i; j++) {
                 System.out.print(" ");
             }
 
+            // for문 오른쪽에서 채우기
             for (int k = 1; k <= i; k++) {
                 System.out.print("*");
             }
