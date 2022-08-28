@@ -23,4 +23,9 @@ public class DigitSequence implements IntSequence {
     public int rest() {
         return number;
     }
+
+    @Override
+    public boolean isOpen() {
+        throw new UnsupportedOperationException("DigitSequence#isOpen not implemented yet !!");
+    }
 }

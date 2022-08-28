@@ -26,5 +26,10 @@ public class SquareSequenceDemo {
         IntSequence digit = new DigitSequence(1792);
         avg = average(digit, 100);
         System.out.println("avg = " + avg);
+
+        IntSequence digitsOf = IntSequence.digitsOf(1729);
+        avg = average(digitsOf, 100);
+        System.out.println("avg = " + avg);
+
     }
 }
