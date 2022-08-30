@@ -22,7 +22,7 @@ public class Ch1_16 {
         double avg = average(3, 4.5, -5, 0);
         System.out.println("avg = " + avg);
 
-        double max = max(4, 3, 4.5, -5, 0);
+        double max = max(0, 1, 2, 3, 4);
         System.out.println("max = " + max);
     }
 }

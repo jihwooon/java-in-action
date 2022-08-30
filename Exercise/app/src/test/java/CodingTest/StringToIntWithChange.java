@@ -16,41 +16,53 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class StringToIntWithChange {
 
     public String intToString(int n) {
+        //Int형을 문자열로 반환 시킨다.
+        String answer = "";
+        int i = n % 10;
+        n/= 10;
+        System.out.println("i = " + n);
 
-        return "";
+        return answer;
     }
 
     public int stringToInt(String str) {
         int answer = 0;
 
-        for (int i = str.charAt(0) == '-' ? 1 : 0; i < str.length(); ++i) {
-            int digit = str.charAt(i) - '0';
-
-            answer = answer * 10 + digit;
-
+        for(int i = str.charAt(0) == '-' ? 1 : 0; i < str.length(); i++) {
+            int result = str.charAt(i) - '0';
+            answer = answer * 10 + result;
         }
-
-        return str.charAt(0) == '-' ? -answer : answer;
+        answer = str.charAt(0) == '-' ? -answer : answer;
+        return answer;
     }
 
+    public int stringToInt1(String str) {
+        int answer = 0;
 
-    @Nested
-    @DisplayName("설명할 테스트 대상을 명시한다.")
-    class Describe_of {
+        for(int i = 0; i < str.length(); i++) {
+            int result = str.charAt(i) - '0';
 
+            if(str.charAt(0) == '-' ) continue;
 
-        @Nested
-        @DisplayName("테스트 대상이 놓인 상황을 설명한다.")
-        class Context_with_real {
-            StringToIntWithChange stringToIntWithChange = new StringToIntWithChange();
+            answer = answer * 10 + result;
 
-            @Test
-            @DisplayName("테스트 대상의 행동을 설명한다.")
-            void it_returns_a_valid_complex() {
-
-                assertThat(stringToIntWithChange.stringToInt("123")).isEqualTo(123);
-                assertThat(stringToIntWithChange.stringToInt("-123")).isEqualTo(-123);
-            }
+            System.out.println("answer = " + answer);
         }
+
+        return answer;
+    }
+
+    @Test
+    @DisplayName("테스트 대상의 행동을 설명한다.")
+    void it_returns_a_valid_complex() {
+//        assertThat(stringToInt("123")).isEqualTo(123);
+//        assertThat(stringToInt("-123")).isEqualTo(-123);
+//        assertThat(stringToInt1("123")).isEqualTo(123);
+        assertThat(stringToInt1("-123")).isEqualTo(-123);
+    }
+
+    @Test
+    void result() {
+//        assertThat(intToString(123)).isEqualTo("123");
     }
 }
