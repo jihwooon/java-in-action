@@ -2,7 +2,7 @@ package CodingTest;
 
 import java.util.List;
 
-public class test {
+public class CanReachEnd {
 
     public boolean canReachEnd(List<Integer> maxAdvanceSteps) {
         int furthestReachSoFar = 0;

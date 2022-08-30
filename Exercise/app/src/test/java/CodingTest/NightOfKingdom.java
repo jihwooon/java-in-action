@@ -18,19 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * >> 구석 위치에 해당하며 나이트는 정원 밖으로 나갈 수 없다.
  * <p>
  * 계획
- * 1. 나이트의 최대 경우의 수를 구한다.
- * 수평
- * 현재위치 [current + 2][current + 1]
- * 현재위치 [current + 2][current -1]
- * 현재위치 [current - 2][current +1]
- * 현재위치 [current - 2][current -1]
- * <p>
- * 수직
- * 현재위치 [current + 1][current + 2]
- * 현재위치 [current - 1][current - 2]
- * 현재위치 [current + 1][current + 2]
- * 현재위치 [current - 1][current - 2]
- * <p>
+
  * 현재 위치에서 경우의 수만큼 이동 할 수 있는지 확인해본다.
  */
 public class NightOfKingdom {
