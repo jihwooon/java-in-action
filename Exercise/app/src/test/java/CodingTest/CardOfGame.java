@@ -2,13 +2,7 @@ package CodingTest;
 
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.spliterator;
 
 /**
  * ## 이해
@@ -37,11 +31,9 @@ import static org.assertj.core.api.InstanceOfAssertFactories.spliterator;
 public class CardOfGame {
 
     public int solution(int[][] arr) {
-//        ArrayList<Integer> list = new ArrayList<>();
         int result = 0;
-        // 각 행마다 작은 수를 반환한다.
+
         for (int i = 0; i < arr.length; i++) {
-            //최대값
             int minValue = Integer.MAX_VALUE;
 
             for (int j = 0; j < arr[i].length; j++) {
@@ -65,5 +57,11 @@ public class CardOfGame {
                 {7, 3, 1, 8},
                 {3, 3, 3, 4},
         })).isEqualTo(3);
+
+        assertThat(solution(new int[][]{
+                {6, 3, 1},
+                {1, 3, 5},
+                {2, 2, 2},
+        })).isEqualTo(2);
     }
 }
