@@ -2,7 +2,6 @@ package CodingTest;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -28,6 +27,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * ## 실행
  * <p>
  * ## 반성
+ * - 처음에 int 형으로 받아서 Array.sort를 하려고 하니 적용이 안됐다.
+ * - 다시 보니까 Collections.reverseOrder는 객체형으로 받아야만 사용할 수 있어서 Integer형으로 변환해서 사용해보니 됐다.
  * -
  */
 
