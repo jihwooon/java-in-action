@@ -17,7 +17,7 @@ public class Recursive {
     public int solution1(String str) {
 
         int result = str.charAt(0) - '0';
-
+        
         if(result == 0) {
             return solution1(str.substring(1));
         }
@@ -30,8 +30,8 @@ public class Recursive {
     @Test
     void result() {
 
-        assertThat(solution1("10")).isEqualTo(1);
-//        assertThat(solution1("12")).isEqualTo(3);
+//        assertThat(solution1("10")).isEqualTo(1);
+        assertThat(solution1("101")).isEqualTo(9);
 
     }
 }
