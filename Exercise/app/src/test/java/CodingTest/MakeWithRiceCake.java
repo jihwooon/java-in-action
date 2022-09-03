@@ -2,9 +2,7 @@ package CodingTest;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -30,9 +28,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>
  * <p>
  * ## 반성
- * -
- * -
- * -
+ * - 이진탐색을 알았다면 이해 할 수 있었는데 몰라서 어려웠다.
+ * - 아직 정렬을 하는데 ArrayList와 기본형 배열의 차이가 분명하지 않아서 헤맸다.
  */
 
 public class MakeWithRiceCake {
