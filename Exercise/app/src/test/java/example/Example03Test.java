@@ -27,7 +27,6 @@ public class Example03Test {
         if (num >= 1) {
 
             String str = num % 2 + answer;
-            System.out.println("str : " +str);
             num /= 2;
 
             return "10";
