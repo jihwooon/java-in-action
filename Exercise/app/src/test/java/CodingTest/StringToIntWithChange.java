@@ -1,6 +1,5 @@
 package CodingTest;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -18,50 +17,43 @@ public class StringToIntWithChange {
         //Int형을 문자열로 반환 시킨다.
         String answer = "";
         int i = n % 10;
-        n/= 10;
+        n /= 10;
         System.out.println("i = " + n);
 
         return answer;
     }
 
+    public int StringToInt(String str) {
+        boolean Sign = true;
+        int result = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch == '-')
+                Sign = false;
+            else if (ch != '+')
+                result = result * 10 + (ch - '0');
+        }
+        return Sign ? 1 : -1 * result;
+
+    }
+
     public int stringToInt(String str) {
         int answer = 0;
 
-        for(int i = str.charAt(0) == '-' ? 1 : 0; i < str.length(); i++) {
-            int result = str.charAt(i) - '0';
-            answer = answer * 10 + result;
-        }
-        answer = str.charAt(0) == '-' ? -answer : answer;
-        return answer;
-    }
-
-    public int stringToInt1(String str) {
-        int answer = 0;
-
-        for(int i = 0; i < str.length(); i++) {
-            int result = str.charAt(i) - '0';
-
-            if(str.charAt(0) == '-' ) continue;
-
-            answer = answer * 10 + result;
-
-            System.out.println("answer = " + answer);
+        for (int i = str.charAt(0) == '-' ? 1 : 0; i < str.length(); i++) {
+            int result = str.charAt(i);
+            answer = answer * 10 + (result - '0');
         }
 
-        return answer;
+        return str.charAt(0) == '-' ? -answer : answer;
     }
 
-    @Test
-    @DisplayName("테스트 대상의 행동을 설명한다.")
-    void it_returns_a_valid_complex() {
-//        assertThat(stringToInt("123")).isEqualTo(123);
-//        assertThat(stringToInt("-123")).isEqualTo(-123);
-//        assertThat(stringToInt1("123")).isEqualTo(123);
-        assertThat(stringToInt1("-123")).isEqualTo(-123);
-    }
 
     @Test
     void result() {
-//        assertThat(intToString(123)).isEqualTo("123");
+        assertThat(stringToInt("123")).isEqualTo(123);
+        assertThat(StringToInt("-123")).isEqualTo(-123);
+
     }
 }
