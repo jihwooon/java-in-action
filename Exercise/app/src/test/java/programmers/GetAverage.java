@@ -29,7 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GetAverage {
 
-    public double solution(int[] arr) {
+    public double solution(int... arr) {
         double answer = 0;
 
         for(double s : arr) {

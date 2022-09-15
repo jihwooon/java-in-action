@@ -37,15 +37,16 @@ public class AdventureGuild {
 
     public int solution(int[] num) {
         int group = 0; //총 그룹의 수
-        int count = 0; //현재 그룹에 포함되어 있는 모험자의 수
+        int adventurer = 0; //현재 그룹에 포함되어 있는 모험자의 수
 
         Arrays.sort(num);
 
         for(int s : num) { //공포도가 낮은 것부터 하나씩 확인
-            count += 1; // 현재 그룹에 해당 모험가를 포함시기키
-            if(count >= s) { // 현재 그룹에 포함된 모험가의 수가 현재의 공포도 이상이라면, 그룹 결성
+            adventurer += 1; // 현재 그룹에 해당 모험가를 포함시기키
+            if(adventurer >= s) { // 현재 그룹에 포함된 모험가의 수가 현재의 공포도 이상이라면, 그룹 결성
                 group +=1; // 총 그룹의 수 증가시키기
-                count = 0; // 현재 그룹에 포함된 모험가의 수 초기화
+                System.out.println("group = " + group);
+                adventurer = 0; // 현재 그룹에 포함된 모험가의 수 초기화
             }
         }
 
