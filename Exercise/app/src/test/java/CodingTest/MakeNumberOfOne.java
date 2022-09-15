@@ -36,35 +36,30 @@ public class MakeNumberOfOne {
 
     public int solution(int n) {
 
+        int[] memo = new int[n + 1];
 
-        if(n != 1) {
+        for(int i = 2; i <= n; i++) {
+            memo[i] = memo[i - 1] + 1;
 
-            if (n <= 1) {
-                return 1;
+            if(i % 5 == 0) {
+                memo[i] = Math.min(memo[i], memo[i / 5] + 1);
             }
 
-            if (n % 5 == 0) {
-                return solution(n / 5);
+            if(i % 3 == 0) {
+                memo[i] = Math.min(memo[i], memo[i / 3] + 1);
             }
 
-            if (n % 3 == 0) {
-                return solution(n / 3);
+            if(i % 2 == 0) {
+                memo[i] = Math.min(memo[i], memo[i / 2] + 1);
             }
-
-            if (n % 2 == 0) {
-                return solution(n / 2);
-            }
-
-            return solution(n - 1);
         }
 
-        return n;
+        return memo[n];
     }
-
 
     @Test
     void result() {
-        assertThat(solution(26)).isEqualTo(1);
+        assertThat(solution(26)).isEqualTo(3);
 //        assertThat(solution(1)).isEqualTo(1);
 //        assertThat(solution(2)).isEqualTo(1);
 //        assertThat(solution(3)).isEqualTo(1);

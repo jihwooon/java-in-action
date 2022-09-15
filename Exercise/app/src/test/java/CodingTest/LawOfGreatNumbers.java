@@ -2,12 +2,7 @@ package CodingTest;
 
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Parameter;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

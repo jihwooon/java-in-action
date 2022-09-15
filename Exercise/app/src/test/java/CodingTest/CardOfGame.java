@@ -34,10 +34,10 @@ public class CardOfGame {
         int result = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            int minValue = Integer.MAX_VALUE;
+            int minValue = Integer.MAX_VALUE; // 현재 줄에서 가장 최대값
 
             for (int j = 0; j < arr[i].length; j++) {
-                minValue = Math.min(minValue, arr[i][j]);
+                minValue = Math.min(minValue, arr[i][j]); //최대값과 arr 값 비교해서 최소값 구하기
             }
             result = Math.max(result, minValue);
         }

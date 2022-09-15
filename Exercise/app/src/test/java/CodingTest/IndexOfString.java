@@ -16,14 +16,14 @@ public class IndexOfString {
 
     public String solution(String str) {
         String answer = "";
-        int m = Integer.MIN_VALUE;
+        int minValue = Integer.MIN_VALUE;
         String[] s = str.split(" ");
 
         for (String x : s) {
             int len = x.length();
             System.out.println("len = " + len);
-            if (len > m) {
-                m = len;
+            if (len > minValue) {
+                minValue = len;
                 answer = x;
             }
         }

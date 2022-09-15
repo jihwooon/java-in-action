@@ -24,7 +24,7 @@ import java.util.StringTokenizer;
  * - 배열에 존재하면 1로 반환 없으면 0으로 반환한다.
  * ## 반성
  * - 입출력에 관한것을 모르다보니 문제에 손을 될 수가 없었다.
- * - StringBuffer, StringTokenizer, BufferedReader을 잘 알고 써야겠습니다.
+ * - StringBuffer, StringTokenizer, BufferedReader 을 잘 알고 써야겠습니다.
  */
 public class SearchNumber {
     public static void main(String[] args) throws IOException {
