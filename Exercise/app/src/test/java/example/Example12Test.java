@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Example {
+public class Example12Test {
 
     public int solution(int n, int acc) {
 

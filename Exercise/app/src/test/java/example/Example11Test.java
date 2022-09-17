@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
     (빈 줄)
 * */
 
-public class Example14Test {
+public class Example11Test {
 
     public boolean solution(int[][] square) {
 

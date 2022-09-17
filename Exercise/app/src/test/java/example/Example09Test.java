@@ -5,12 +5,10 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Example2Test {
+public class Example09Test {
 
     public int solution(String[] str) {
         List<String> list = Arrays.asList(str);

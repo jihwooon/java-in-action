@@ -2,8 +2,6 @@ package example;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -23,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 // 문자열 배열이 주워졌는데, 특정만 들어 있는지 없는지 확인한다.
 
-class Example1Test {
+class Example10Test {
 
     public String[] solution(String[] str) {
 

@@ -12,11 +12,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.lang.System.exit;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class Sum {
 
-    public int solution(int[] arr) {
+    public int solution(int... arr) {
 
         int sum = 0;
         List<Integer> list = Arrays.stream(arr)
@@ -33,6 +34,11 @@ public class Sum {
         }
 
         return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hello");
+        exit(0);
     }
 
     @Test
