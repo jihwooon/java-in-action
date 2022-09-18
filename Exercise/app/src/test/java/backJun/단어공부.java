@@ -2,6 +2,8 @@ package backJun;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -35,9 +37,10 @@ public class 단어공부 {
 
         for (int i = 0; i < s.length(); i++) {
             int num = s.charAt(i) - 'A';
-            System.out.println("num = " + num);
-            System.out.println("coung++ = " + count[num]++);
+            count[num]++;
         }
+
+        System.out.println("before count = " + Arrays.toString(count));
 
         int max = 0;
         char answer = '?';
@@ -46,20 +49,23 @@ public class 단어공부 {
                 max = count[i];
                 System.out.println("max = " + max);
                 answer = (char) (i + 'A');
-                System.out.println("answer = " + answer);
+                System.out.println("i = " + i);
+
             } else if( max == count[i]) {
                 answer = '?';
             }
         }
+
+        System.out.println("after count = " + Arrays.toString(count));
         return answer;
     }
 
 
     @Test
     void result() {
-//        assertThat(solution("a")).isEqualTo('A');
+        assertThat(solution("a")).isEqualTo('A');
 //        assertThat(solution("b")).isEqualTo('B');
-        assertThat(solution("ccb")).isEqualTo('C');
+//        assertThat(solution("cbc")).isEqualTo('C');
 //        assertThat(solution("Mississipi")).isEqualTo('?');
     }
 }
