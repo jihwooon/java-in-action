@@ -33,18 +33,18 @@ public class 될때까지 {
         int count = 0;
 
         while (n >= k) { //n >= k 이상 일 때
-            while (n % k == 0) { // n 이 k로 나누어 떨어질 때
-                n /= k; // n을 k로 나눈다.
+            while (n % k != 0) { // n 이 k로 나누어 떨어질 때
+                n -= 1; // n을 k로 나눈다.
                 count += 1;
             }
 
-            n -= 1; // n에서 1을 뺀다.
+            n /= k; // n에서 1을 뺀다.
             count += 1;
 
         }
 
-        while (n > 1) { // n이 1 이상 일 때
-            n -= 1; // n에서 1을 뺀다.
+        while (n > 1) { // n이 k로 더 이상 나눌 수 없을 때 1을 뺀다.
+            n -= 1;
             count += 1;
         }
 
@@ -54,6 +54,8 @@ public class 될때까지 {
 
     @Test
     void result() {
+        assertThat(solution(25, 5)).isEqualTo(2);
+        assertThat(solution(28, 3)).isEqualTo(4);
         assertThat(solution(25, 3)).isEqualTo(6);
     }
 }
