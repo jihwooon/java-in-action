@@ -20,6 +20,7 @@ public class InspectPersonalityType {
 
         for (int i = 0; i < survey.length; i++) {
             char type1 = survey[i].charAt(0);
+            System.out.println("type1 = " + type1);
             char type2 = survey[i].charAt(1);
 
             if (choices[i] > 4) {
