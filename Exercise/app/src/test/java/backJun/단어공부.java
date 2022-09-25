@@ -64,8 +64,8 @@ public class 단어공부 {
     @Test
     void result() {
         assertThat(solution("a")).isEqualTo('A');
-//        assertThat(solution("b")).isEqualTo('B');
-//        assertThat(solution("cbc")).isEqualTo('C');
-//        assertThat(solution("Mississipi")).isEqualTo('?');
+        assertThat(solution("b")).isEqualTo('B');
+        assertThat(solution("cbc")).isEqualTo('C');
+        assertThat(solution("Mississipi")).isEqualTo('?');
     }
 }

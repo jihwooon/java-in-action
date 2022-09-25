@@ -9,8 +9,6 @@ package example;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.lang.System.exit;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,20 +18,22 @@ public class Sum {
     public int solution(int... arr) {
 
         int sum = 0;
-        List<Integer> list = Arrays.stream(arr)
-                .boxed()
-                .collect(Collectors.toList());
+
+//        List<Integer> list = Arrays.stream(arr)
+//                .boxed()
+//                .collect(Collectors.toList());
 
 //        for (int i = 0; i <= list.size() - 1; i++) {
 //            sum += list.get(i);
 //            System.out.println("sum : " + sum);
 //        }
 
-        for (int num : list) {
-            sum += num;
-        }
 
-        return sum;
+//        for (int num : list) {
+//            sum += num;
+//        }
+
+        return Arrays.stream(arr).reduce(0, (a, b) -> a + b);
     }
 
     public static void main(String[] args) {
@@ -43,6 +43,6 @@ public class Sum {
 
     @Test
     void result() {
-        assertThat(solution(new int[]{1, 4, 6, 8, 4, 3, 12, 5, 9})).isEqualTo(52);
+        assertThat(solution(1, 4, 6, 8, 4, 3, 12, 5, 9)).isEqualTo(52);
     }
 }

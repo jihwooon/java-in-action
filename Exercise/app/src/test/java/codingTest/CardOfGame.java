@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <p>
  * ## 반성
  * - 이중 배열로 숫자를 뽑아서 비교 할려고 하니까 많은 어려움이 있었다.
- * - 코드의 동작 방식을 이해를 잘 못해서 여려움이 있었다.
+ * - 코드의 동작 방식을 이해를 잘 못해서 어려움이 있었다.
  * -
  */
 public class CardOfGame {
