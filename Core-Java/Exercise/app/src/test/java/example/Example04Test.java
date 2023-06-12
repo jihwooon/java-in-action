@@ -9,7 +9,7 @@ public class Example04Test {
     private int decimalFromBinary(String str) {
         int spot = str.charAt(0) - '0';
 
-        if (str.length() <= 1) {
+        if (str.length() < 1) {
             return spot;
         }
 
