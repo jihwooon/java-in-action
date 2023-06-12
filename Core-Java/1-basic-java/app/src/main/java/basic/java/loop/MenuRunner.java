@@ -18,6 +18,8 @@ public class MenuRunner {
         performOperationUsing(number1, number2);
 
         puzzle2(number1);
+        long currentMillis = System.currentTimeMillis() - 100000;
+        System.out.println("currentMillis = " + currentMillis);
     }
 
     private static void puzzle2(int number) {
