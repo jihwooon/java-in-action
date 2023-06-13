@@ -1,8 +1,8 @@
 package chapter2;
 
-import chapter3.BankStatementCSVParser;
-import chapter3.BankStatementParser;
-import chapter3.BankTransaction;
+import chapter3.bank.BankStatementCSVParser;
+import chapter3.bank.BankStatementParser;
+import chapter3.bank.BankTransaction;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
