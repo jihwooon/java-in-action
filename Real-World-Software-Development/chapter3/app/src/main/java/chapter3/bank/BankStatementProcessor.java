@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3.bank;
 
 import java.time.Month;
 import java.util.List;
