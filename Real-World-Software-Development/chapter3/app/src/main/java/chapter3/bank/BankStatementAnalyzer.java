@@ -10,7 +10,7 @@ import java.util.List;
 public class BankStatementAnalyzer {
     private static final String RESOURCES = "/Users/jihwooon/Documents/java-in-action/Real-World-Software-Development/chapter2/app/src/main/resources/bankacount.csv";
 
-    public void analyze(final BankStatementParser bankStatementParser) throws IOException {
+    public void analyze(final BankStatementParser bankStatementParser) throws IOException, CSVSyntaxException {
         final Path path = Paths.get(RESOURCES);
         List<String> lines = Files.readAllLines(path);
 
