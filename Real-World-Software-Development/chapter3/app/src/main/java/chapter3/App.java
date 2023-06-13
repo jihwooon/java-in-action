@@ -13,5 +13,8 @@ public class App {
         BankStatementParser bankStatementParser = new BankStatementCSVParser();
 
         bankStatementAnalyzer.analyze(bankStatementParser);
+
+        HtmlExporter htmlExporter = new HtmlExporter();
+        System.out.println(htmlExporter.export(new SummaryStatistics(1.0,2.0,3,4)));
     }
 }
