@@ -6,6 +6,7 @@ package chapter3;
 import chapter3.bank.BankStatementAnalyzer;
 import chapter3.bank.BankStatementCSVParser;
 import chapter3.bank.BankStatementParser;
+import chapter3.bank.CSVSyntaxException;
 import chapter3.summaryStatistics.HtmlExporter;
 import chapter3.summaryStatistics.SummaryStatistics;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
 
 public class App {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, CSVSyntaxException {
         BankStatementAnalyzer bankStatementAnalyzer = new BankStatementAnalyzer();
 
         BankStatementParser bankStatementParser = new BankStatementCSVParser();
