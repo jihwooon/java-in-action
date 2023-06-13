@@ -1,7 +1,6 @@
 package chapter3;
 
 import java.time.Month;
-import java.util.ArrayList;
 import java.util.List;
 
 public class BankStatementProcessor {
@@ -30,22 +29,18 @@ public class BankStatementProcessor {
     }
 
     public List<BankTransaction> selectMonth(final Month month) {
-        final List<BankTransaction> bankTransactionsInMonth = new ArrayList<>();
-        for (final BankTransaction bankTransaction : bankTransactions) {
-            if (bankTransaction.getDate().getMonth() == month) {
-                bankTransactionsInMonth.add(bankTransaction);
-            }
-        }
-        return bankTransactionsInMonth;
+        bankTransactions
+            .stream()
+            .filter(bankTransaction -> bankTransaction.getDate().getMonth() == month)
+            .toList();
+        return bankTransactions;
     }
 
     public List<BankTransaction> findTransactions(final BankTransactionFilter bankTransactionFilter) {
-        List<BankTransaction> result = new ArrayList<>();
-        for (final BankTransaction bankTransaction : bankTransactions) {
-            if (bankTransactionFilter.test(bankTransaction)) {
-                result.add(bankTransaction);
-            }
-        }
-        return result;
+        bankTransactions
+            .stream()
+            .filter(bankTransaction -> bankTransactionFilter.test(bankTransaction))
+            .toList();
+        return bankTransactions;
     }
 }
