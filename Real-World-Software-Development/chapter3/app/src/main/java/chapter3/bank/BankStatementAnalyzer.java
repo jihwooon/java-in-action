@@ -1,4 +1,4 @@
-package chapter2;
+package chapter3.bank;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ import java.util.List;
 public class BankStatementAnalyzer {
     private static final String RESOURCES = "/Users/jihwooon/Documents/java-in-action/Real-World-Software-Development/chapter2/app/src/main/resources/bankacount.csv";
 
-    public void analyze(final BankStatementParser bankStatementParser) throws IOException {
+    public void analyze(final BankStatementParser bankStatementParser) throws IOException, CSVSyntaxException {
         final Path path = Paths.get(RESOURCES);
         List<String> lines = Files.readAllLines(path);
 
@@ -21,8 +21,14 @@ public class BankStatementAnalyzer {
     }
 
     private static void collectSummary(BankStatementProcessor bankStatementProcessor) {
+        List<BankTransaction> transactions = bankStatementProcessor.findTransactions(bankTransaction ->
+                bankTransaction.getDate().getMonth() == Month.FEBRUARY
+                && bankTransaction.getAmount() >= 1_000
+        );
+
         System.out.println("The total for all transactions is " + bankStatementProcessor.calculateTotalAmount());
         System.out.println("Transactions in January " + bankStatementProcessor.selectMonth(Month.JANUARY));
         System.out.println("The total Tesco received is " + bankStatementProcessor.calculateTotalForCategory("Tesco"));
+        System.out.println(transactions);
     }
 }
