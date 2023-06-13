@@ -1,4 +1,4 @@
-package chapter2;
+package chapter3;
 
 import java.time.Month;
 import java.util.ArrayList;
@@ -21,8 +21,8 @@ public class BankStatementProcessor {
 
     public double calculateTotalForCategory(final String category) {
         double total = 0;
-        for(final BankTransaction bankTransaction: bankTransactions) {
-            if(bankTransaction.getDescription().equals(category)) {
+        for (final BankTransaction bankTransaction : bankTransactions) {
+            if (bankTransaction.getDescription().equals(category)) {
                 total = bankTransaction.getAmount();
             }
         }
