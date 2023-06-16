@@ -2,5 +2,5 @@ package chapter5;
 
 @FunctionalInterface
 public interface Action {
-    void perform();
+    void perform(Facts facts);
 }
