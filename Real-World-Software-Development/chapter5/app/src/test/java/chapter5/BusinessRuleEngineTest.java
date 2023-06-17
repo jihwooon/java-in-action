@@ -13,7 +13,8 @@ import static org.mockito.Mockito.verify;
 class BusinessRuleEngineTest {
 
     @Nested
-    class describe_BusinessRuleEngine {
+    @DisplayName("BusinessRuleEngine의")
+    class Context_BusinessRuleEngine {
         private BusinessRuleEngine businessRuleEngine;
 
         @BeforeEach
@@ -22,37 +23,78 @@ class BusinessRuleEngineTest {
         }
 
         @Test
-        @DisplayName("businessRuleEngine에 아무것도 생성이 되어 있지 않으면 count 횟수가 0이 나온다.")
+        @DisplayName("아무것도 생성이 되어 있지 않으면 count 메서드는 횟수가 0이 나온다.")
         void shouldHaveNoRulesInitially() {
             assertThat(businessRuleEngine.count()).isEqualTo(0);
         }
 
+        @Test
+        @DisplayName("run 메서드를 검증한다.")
+        public void It_OneAction() {
+            Action mockAction = mock(Action.class);
+            Facts mockFacts = mock(Facts.class);
+            BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
+
+            businessRuleEngine.addAction(mockAction);
+            businessRuleEngine.run();
+
+            verify(mockAction).perform(mockFacts);
+        }
     }
 
-    @Test
-    @DisplayName("businessRuleEngine의 run 메서드를 검증한다.")
-    public void shouldExecuteOneAction() {
-        Action mockAction = mock(Action.class);
-        Facts mockFacts = mock(Facts.class);
-        BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
+    @Nested
+    @DisplayName("addAction 메서드는")
+    class Describe_addAction {
+        private BusinessRuleEngine businessRuleEngine;
 
-        businessRuleEngine.addAction(mockAction);
-        businessRuleEngine.run();
+        @BeforeEach
+        public void setUp() {
+            this.businessRuleEngine = new BusinessRuleEngine(new Facts());
+        }
 
-        verify(mockAction).perform(mockFacts);
-    }
+        @Nested
+        @DisplayName("특정 거래의 예상치를 계산하는 규칙의")
+        class Context_forecastedAmount {
 
-    void doSomeThing() {
-//        @Test
-//        @DisplayName("액션이 두 개 이상 추가되면 addAction의 갯수만큼 count를 센다.")
-//        void shouldAddTwoActions() {
-//            businessRuleEngine.addAction((facts) -> {
-//            });
-//
-//            businessRuleEngine.addAction(() -> {
-//            });
-//
-//            assertThat(businessRuleEngine.count()).isEqualTo(2);
-//        }
+            @Test
+            @DisplayName("if 조건에 대한 결과를 count를 센다")
+            void it_addFact_if() {
+                businessRuleEngine.addAction((facts) -> {
+                    var forecastedAmount = 0.0;
+                    var dealStage = Stage.valueOf(facts.getFacts("stage"));
+                    var amount = Double.parseDouble(facts.getFacts("amount"));
+                    if (dealStage == Stage.LEAD) {
+                        forecastedAmount = amount * 0.2;
+                    } else if (dealStage == Stage.EVALUATING) {
+                        forecastedAmount = amount * 0.5;
+                    } else if (dealStage == Stage.INTERSTED) {
+                        forecastedAmount = amount * 0.8;
+                    } else if (dealStage == Stage.INTERSTED) {
+                        forecastedAmount = amount;
+                    }
+                    facts.addFact("forecastedAmount", String.valueOf(forecastedAmount));
+                });
+
+                assertThat(businessRuleEngine.count()).isEqualTo(1);
+            }
+
+            @Test
+            @DisplayName("switch 조건에 대한 결과를 count를 센다.")
+            void it_addFact_switch() {
+                businessRuleEngine.addAction((facts) -> {
+                    var dealStage = Stage.valueOf(facts.getFacts("stage"));
+                    var amount = Double.parseDouble(facts.getFacts("amount"));
+                    var forecastedAmount = amount * switch (dealStage) {
+                        case LEAD -> 0.2;
+                        case EVALUATING -> 0.5;
+                        case INTERSTED -> 0.8;
+                        case CLOSED -> 1;
+                    };
+                    facts.addFact("forecastedAmount", String.valueOf(forecastedAmount));
+                });
+
+                assertThat(businessRuleEngine.count()).isEqualTo(1);
+            }
+        }
     }
 }
