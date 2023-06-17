@@ -31,14 +31,14 @@ class BusinessRuleEngineTest {
         @Test
         @DisplayName("run 메서드를 검증한다.")
         public void It_OneAction() {
-            Action mockAction = mock(Action.class);
             Facts mockFacts = mock(Facts.class);
+            Rule mockRules = mock(Rule.class);
             BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(mockFacts);
 
-            businessRuleEngine.addAction(mockAction);
+            businessRuleEngine.addRule(mockRules);
             businessRuleEngine.run();
 
-            verify(mockAction).perform(mockFacts);
+            verify(mockRules).perform(mockFacts);
         }
     }
 
@@ -59,7 +59,7 @@ class BusinessRuleEngineTest {
             @Test
             @DisplayName("if 조건에 대한 결과를 count를 센다")
             void it_addFact_if() {
-                businessRuleEngine.addAction((facts) -> {
+                businessRuleEngine.addRule((facts) -> {
                     var forecastedAmount = 0.0;
                     var dealStage = Stage.valueOf(facts.getFacts("stage"));
                     var amount = Double.parseDouble(facts.getFacts("amount"));
@@ -81,7 +81,7 @@ class BusinessRuleEngineTest {
             @Test
             @DisplayName("switch 조건에 대한 결과를 count를 센다.")
             void it_addFact_switch() {
-                businessRuleEngine.addAction((facts) -> {
+                businessRuleEngine.addRule((facts) -> {
                     var dealStage = Stage.valueOf(facts.getFacts("stage"));
                     var amount = Double.parseDouble(facts.getFacts("amount"));
                     var forecastedAmount = amount * switch (dealStage) {
