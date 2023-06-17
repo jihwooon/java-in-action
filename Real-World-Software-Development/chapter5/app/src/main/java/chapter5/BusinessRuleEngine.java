@@ -5,23 +5,23 @@ import java.util.List;
 
 public class BusinessRuleEngine {
 
-    private final List<Action> actions;
+    private final List<Rule> rules;
     private final Facts facts;
 
     public BusinessRuleEngine(Facts facts) {
-        this.actions = new ArrayList<>();
+        this.rules = new ArrayList<>();
         this.facts = facts;
     }
 
-    public void addAction(final Action action) {
-        this.actions.add(action);
+    public void addRule(final Rule rules) {
+        this.rules.add(rules);
     }
 
     public int count() {
-        return this.actions.size();
+        return this.rules.size();
     }
 
     public void run() {
-        this.actions.forEach(action -> action.perform(facts));
+        this.rules.forEach(action -> action.perform(facts));
     }
 }
