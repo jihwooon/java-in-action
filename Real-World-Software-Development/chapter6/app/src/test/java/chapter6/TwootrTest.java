@@ -19,8 +19,8 @@ class TwootrTest {
   }
 
   @Test
-  public void shouldBeAbleToAuthenticateUser() {
-    Optional<SenderEndPoint> endPoint = twootr.onLogon(TestData.USER_ID, receiverEndPoint);
+  public void shouldBeAbleToAuthenticateUserWithWrongPassword() {
+    Optional<SenderEndPoint> endPoint = twootr.onLogon(TestData.USER_ID, "bad password",receiverEndPoint);
     assertFalse(endPoint.isPresent());
   }
 }
