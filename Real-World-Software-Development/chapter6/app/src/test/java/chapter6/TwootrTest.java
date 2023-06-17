@@ -11,7 +11,9 @@ class TwootrTest {
 
   private final ReceiverEndPoint receiverEndPoint = mock(ReceiverEndPoint.class);
   private UserRepository userRepository = mock(UserRepository.class);
+
   private Twootr twootr;
+  private SenderEndPoint endPoint;
 
   @BeforeEach
   public void setUp() {
@@ -20,7 +22,8 @@ class TwootrTest {
 
   @Test
   public void shouldBeAbleToAuthenticateUserWithWrongPassword() {
-    Optional<SenderEndPoint> endPoint = twootr.onLogon(TestData.USER_ID, "bad password",receiverEndPoint);
+    Optional<SenderEndPoint> endPoint = twootr.onLogon(TestData.USER_ID, "bad password",
+        receiverEndPoint);
     assertFalse(endPoint.isPresent());
   }
 }

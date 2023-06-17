@@ -1,5 +1,6 @@
 package chapter6;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -18,8 +19,10 @@ public class Twootr {
 
     Optional<User> authenticatedUser = userRepository
         .get(userId)
-        .filter(userId::equals)
-        .filter(password::equals);
+        .filter(userSameId -> {
+          byte[] hashedPassword = KeyGenerator.hash(password, userSameId.getSalt());
+          return Arrays.equals(hashedPassword, userSameId.getPassword());
+        });
 
     return authenticatedUser.map(user -> new SenderEndPoint(user));
   }
