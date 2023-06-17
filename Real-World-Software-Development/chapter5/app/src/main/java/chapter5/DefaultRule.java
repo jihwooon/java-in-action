@@ -1,6 +1,6 @@
 package chapter5;
 
-public class DefaultRule {
+public class DefaultRule implements Rule {
     private final Condition condition;
     private final Action action;
 
