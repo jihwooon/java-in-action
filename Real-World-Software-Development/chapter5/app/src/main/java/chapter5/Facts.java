@@ -13,4 +13,8 @@ public class Facts {
     public void addFact(final String name, final String value) {
         this.facts.put(name, value);
     }
+
+    public String setFact(String jobTitle, String ceo) {
+        return facts.put(jobTitle, ceo);
+    }
 }
