@@ -11,9 +11,10 @@ public class TestData {
   static final byte[] PASSWORD_BYTES = KeyGenerator.hash(PASSWORD, SALT);
 
   static final String TWOOT = "Hello World!";
+  static final String TWOOT_2 = "Bye World!";
 
-  static Twoot twootAt(final String id) {
-    return new Twoot(id, OTHER_USER_ID, TWOOT);
+  static Twoot twootAt(final String id, final Position position) {
+    return new Twoot(id, OTHER_USER_ID, TWOOT, position);
   }
 
 }

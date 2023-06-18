@@ -7,11 +7,22 @@ public class Twoot {
   private final String id;
   private final String senderId;
   private final String content;
+  private final Position position;
 
-  public Twoot(String id, String senderId, String content) {
+  public Twoot(final String id, final String senderId, final String content, final Position position) {
+    Objects.requireNonNull(id, "id");
+    Objects.requireNonNull(senderId, "senderId");
+    Objects.requireNonNull(content, "content");
+    Objects.requireNonNull(position, "position");
+
     this.id = id;
+    this.position = position;
     this.senderId = senderId;
     this.content = content;
+  }
+
+  public boolean isAfter(final Position otherPosition) {
+    return position.getValue() > otherPosition.getValue();
   }
 
   public String getId() {
@@ -24,6 +35,10 @@ public class Twoot {
 
   public String getContent() {
     return content;
+  }
+
+  public Position getPosition() {
+    return position;
   }
 
   @Override
@@ -49,6 +64,7 @@ public class Twoot {
         "id='" + id + '\'' +
         ", senderId='" + senderId + '\'' +
         ", content='" + content + '\'' +
+        ", position=" + position +
         '}';
   }
 }

@@ -18,11 +18,14 @@ public class SenderEndPoint {
     return twootr.onFollow(user, userIdToFollow);
   }
 
-  public boolean onSendTwoot(final String id, final String content) {
+  public Position onSendTwoot(final String id, final String content) {
     Objects.requireNonNull(content, "content");
 
-    twootr.onSendTwoot(id, user, content);
-    return true;
+    return twootr.onSendTwoot(id, user, content);
+  }
+
+  public void onLogoff() {
+    user.onLogoff();
   }
 
 }

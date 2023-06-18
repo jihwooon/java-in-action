@@ -52,6 +52,10 @@ public class User {
     return false;
   }
 
+  void onLogoff() {
+    receiverEndPoint = null;
+  }
+
   @Override
   public String toString() {
     return "User{" +
