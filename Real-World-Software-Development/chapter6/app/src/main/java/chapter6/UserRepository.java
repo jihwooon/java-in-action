@@ -1,5 +1,6 @@
 package chapter6;
 
+import chapter6.status.FollowStatus;
 import java.util.Optional;
 
 public interface UserRepository extends AutoCloseable {

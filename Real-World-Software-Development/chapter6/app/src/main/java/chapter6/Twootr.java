@@ -1,8 +1,9 @@
 package chapter6;
 
-import static chapter6.FollowStatus.ALREADY_FOLLOWING;
-import static chapter6.FollowStatus.SUCCESS;
+import static chapter6.status.FollowStatus.ALREADY_FOLLOWING;
+import static chapter6.status.FollowStatus.SUCCESS;
 
+import chapter6.status.FollowStatus;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;

@@ -1,5 +1,6 @@
 package chapter6;
 
+import chapter6.status.FollowStatus;
 import java.util.Objects;
 
 public class SenderEndPoint {

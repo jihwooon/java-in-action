@@ -1,15 +1,16 @@
 package chapter6;
 
-import static chapter6.FollowStatus.ALREADY_FOLLOWING;
-import static chapter6.FollowStatus.SUCCESS;
 import static chapter6.TestData.TWOOT;
 import static chapter6.TestData.twootAt;
+import static chapter6.status.FollowStatus.ALREADY_FOLLOWING;
+import static chapter6.status.FollowStatus.SUCCESS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import chapter6.status.FollowStatus;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
