@@ -53,7 +53,7 @@ public class User {
     return false;
   }
 
-  void onLogoff() {
+  public void onLogoff() {
     receiverEndPoint = null;
   }
 
