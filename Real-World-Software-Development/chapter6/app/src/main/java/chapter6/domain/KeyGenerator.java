@@ -27,7 +27,7 @@ public class KeyGenerator {
         KEY_LENGTH);
   }
 
-  static byte[] newSalt() {
+  public static byte[] newSalt() {
     final byte[] salt = new byte[SALT_LENGTH];
     secureRandom.nextBytes(salt);
     return salt;
