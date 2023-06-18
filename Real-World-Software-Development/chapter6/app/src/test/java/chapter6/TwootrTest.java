@@ -2,6 +2,7 @@ package chapter6;
 
 import static chapter6.FollowStatus.ALREADY_FOLLOWING;
 import static chapter6.FollowStatus.SUCCESS;
+import static chapter6.TestData.TWOOT;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -52,10 +53,20 @@ class TwootrTest {
   @Test
   public void shouldReceiveTwootsFromFollowedUser() {
 
+    final String id = "1";
+
+    endPoint.onFollow(TestData.OTHER_USER_ID);
+
+    final SenderEndPoint otherEndPoint = otherLogon();
+    assertThat(otherEndPoint.onSendTwoot(id, TWOOT)).isFalse();
   }
 
   private void logon() {
     this.endPoint = logon(TestData.USER_ID, receiverEndPoint);
+  }
+
+  private SenderEndPoint otherLogon() {
+    return logon(TestData.OTHER_USER_ID, mock(ReceiverEndPoint.class));
   }
 
   private SenderEndPoint logon(final String userId, final ReceiverEndPoint receiverEndPoint) {

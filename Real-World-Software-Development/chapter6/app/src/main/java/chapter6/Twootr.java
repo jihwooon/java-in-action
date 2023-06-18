@@ -32,15 +32,19 @@ public class Twootr {
 
   public FollowStatus onFollow(final User follow, final String userIdToFollow) {
 
-    if(follow.getId() == userIdToFollow) {
+    if (follow.getId() == userIdToFollow) {
       return ALREADY_FOLLOWING;
     }
 
     return SUCCESS;
   }
 
-  public String onSendTwoot(final String id, final User user, final String content) {
-    throw new UnsupportedOperationException();
+  void onSendTwoot(final String id, final User user, final String content) {
+    String userId = user.getId();
+    Twoot twoot = new Twoot(id, userId, content);
+    user.followers()
+        .filter(User::isLoggedOn)
+        .forEach(follow -> follow.receiveTwoot(twoot));
   }
 
 }

@@ -10,4 +10,10 @@ public class TestData {
   static final String PASSWORD = "ahc5ez";
   static final byte[] PASSWORD_BYTES = KeyGenerator.hash(PASSWORD, SALT);
 
+  static final String TWOOT = "Hello World!";
+
+  static Twoot twootAt(final String id) {
+    return new Twoot(id, OTHER_USER_ID, TWOOT);
+  }
+
 }
