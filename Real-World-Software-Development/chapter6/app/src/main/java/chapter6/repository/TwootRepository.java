@@ -1,5 +1,7 @@
-package chapter6;
+package chapter6.repository;
 
+import chapter6.Twoot;
+import chapter6.TwootQuery;
 import java.util.Optional;
 import java.util.function.Consumer;
 

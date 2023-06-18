@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import chapter6.repository.TwootRepository;
+import chapter6.repository.UserRepository;
 import chapter6.status.FollowStatus;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
