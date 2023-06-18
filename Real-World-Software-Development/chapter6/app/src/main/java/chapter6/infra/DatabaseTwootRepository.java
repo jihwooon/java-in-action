@@ -5,8 +5,11 @@ import chapter6.domain.Position;
 import chapter6.domain.Twoot;
 import chapter6.repository.TwootRepository;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class DatabaseTwootRepository implements TwootRepository {
 
@@ -29,6 +32,21 @@ public class DatabaseTwootRepository implements TwootRepository {
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private String userTupleLoop(final Set<String> following) {
+    ArrayList<String> quotedIds = new ArrayList<>();
+    for (String id : following) {
+      quotedIds.add("'" + id + "'");
+    }
+    return '(' + String.join(",", quotedIds) + ')';
+  }
+
+  private String usersTuple(final Set<String> following) {
+    return following
+        .stream()
+        .map(id -> "'" + id + "'")
+        .collect(Collectors.joining(",", "(", ")"));
   }
 
   @Override
