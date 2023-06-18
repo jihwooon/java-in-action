@@ -1,5 +1,8 @@
 package chapter6;
 
+import static chapter6.FollowStatus.ALREADY_FOLLOWING;
+import static chapter6.FollowStatus.SUCCESS;
+
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
@@ -24,7 +27,15 @@ public class Twootr {
           return Arrays.equals(hashedPassword, userSameId.getPassword());
         });
 
-    return authenticatedUser.map(user -> new SenderEndPoint(user));
+    return authenticatedUser.map(user -> new SenderEndPoint(user, this));
   }
 
+  public FollowStatus onFollow(final User follow, final String userIdToFollow) {
+
+    if(follow.getId() == userIdToFollow) {
+      return ALREADY_FOLLOWING;
+    }
+
+    return SUCCESS;
+  }
 }
