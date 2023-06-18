@@ -16,7 +16,7 @@ public class KeyGenerator {
 
   private static final SecureRandom secureRandom = new SecureRandom();
 
-  static byte[] hash(final String password, final byte[] salt) {
+  public static byte[] hash(final String password, final byte[] salt) {
     final byte[] passwordBytes = password.getBytes(UTF_16);
     return SCrypt.generate(
         passwordBytes,
