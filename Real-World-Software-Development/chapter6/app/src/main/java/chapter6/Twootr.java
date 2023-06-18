@@ -38,4 +38,9 @@ public class Twootr {
 
     return SUCCESS;
   }
+
+  public String onSendTwoot(final String id, final User user, final String content) {
+    throw new UnsupportedOperationException();
+  }
+
 }

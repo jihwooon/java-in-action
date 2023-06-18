@@ -49,6 +49,11 @@ class TwootrTest {
     assertThat(followStatus).isEqualTo(ALREADY_FOLLOWING);
   }
 
+  @Test
+  public void shouldReceiveTwootsFromFollowedUser() {
+
+  }
+
   private void logon() {
     this.endPoint = logon(TestData.USER_ID, receiverEndPoint);
   }
