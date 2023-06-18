@@ -3,6 +3,10 @@ package chapter6;
 import static chapter6.status.FollowStatus.ALREADY_FOLLOWING;
 import static chapter6.status.FollowStatus.SUCCESS;
 
+import chapter6.domain.KeyGenerator;
+import chapter6.domain.Position;
+import chapter6.domain.Twoot;
+import chapter6.domain.User;
 import chapter6.repository.TwootRepository;
 import chapter6.repository.UserRepository;
 import chapter6.status.FollowStatus;

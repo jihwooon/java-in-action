@@ -10,6 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
+import chapter6.domain.Position;
+import chapter6.domain.Twoot;
+import chapter6.domain.User;
 import chapter6.repository.TwootRepository;
 import chapter6.repository.UserRepository;
 import chapter6.status.FollowStatus;

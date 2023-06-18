@@ -2,6 +2,7 @@ package chapter6;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import chapter6.domain.Twoot;
 import java.util.ArrayList;
 import java.util.List;
 

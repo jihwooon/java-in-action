@@ -1,6 +1,6 @@
 package chapter6.repository;
 
-import chapter6.User;
+import chapter6.domain.User;
 import chapter6.status.FollowStatus;
 import java.util.Optional;
 

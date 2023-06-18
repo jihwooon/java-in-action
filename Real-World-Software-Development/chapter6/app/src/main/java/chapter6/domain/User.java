@@ -1,5 +1,6 @@
-package chapter6;
+package chapter6.domain;
 
+import chapter6.ReceiverEndPoint;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -31,7 +32,7 @@ public class User {
     return salt;
   }
 
-  Stream<User> followers() {
+  public Stream<User> followers() {
     return followers.stream();
   }
 
@@ -39,11 +40,11 @@ public class User {
     this.receiverEndPoint = receiverEndPoint;
   }
 
-  boolean isLoggedOn() {
+  public boolean isLoggedOn() {
     return receiverEndPoint != null;
   }
 
-  boolean receiveTwoot(final Twoot twoot) {
+  public boolean receiveTwoot(final Twoot twoot) {
     if (isLoggedOn()) {
       receiverEndPoint.onTwoot(twoot);
       return true;

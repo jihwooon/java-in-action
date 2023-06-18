@@ -1,5 +1,7 @@
 package chapter6;
 
+import chapter6.domain.Position;
+import chapter6.domain.User;
 import chapter6.status.FollowStatus;
 import java.util.Objects;
 

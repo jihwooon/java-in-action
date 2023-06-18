@@ -1,5 +1,9 @@
 package chapter6;
 
+import chapter6.domain.KeyGenerator;
+import chapter6.domain.Position;
+import chapter6.domain.Twoot;
+
 public class TestData {
 
   static final String USER_ID = "Joe";

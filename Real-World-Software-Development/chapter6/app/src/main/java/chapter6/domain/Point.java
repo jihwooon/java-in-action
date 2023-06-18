@@ -1,4 +1,4 @@
-package chapter6.examples;
+package chapter6.domain;
 
 public class Point {
 

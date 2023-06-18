@@ -1,7 +1,6 @@
-package chapter6.examples;
+package chapter6;
 
-import chapter6.ReceiverEndPoint;
-import chapter6.Twoot;
+import chapter6.domain.Twoot;
 
 public class PrintingEndPoint implements ReceiverEndPoint {
 

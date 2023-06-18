@@ -1,4 +1,4 @@
-package chapter6;
+package chapter6.domain;
 
 public class Position {
 

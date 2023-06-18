@@ -1,4 +1,4 @@
-package chapter6;
+package chapter6.domain;
 
 import static java.nio.charset.StandardCharsets.UTF_16;
 
