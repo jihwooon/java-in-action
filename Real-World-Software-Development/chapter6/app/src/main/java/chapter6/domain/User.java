@@ -21,10 +21,11 @@ public class User {
   private Position lastSeenPosition;
   private ReceiverEndPoint receiverEndPoint;
 
-  public User(String id, byte[] password, byte[] salt) {
+  public User(String id, byte[] password, byte[] salt, Position position) {
     this.id = id;
     this.password = password;
     this.salt = salt;
+    this.lastSeenPosition = position;
   }
 
   public String getId() {
