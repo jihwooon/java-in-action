@@ -1,0 +1,11 @@
+dontinline,*.*_all_jmhStub
+dontinline,*.*_avgt_jmhStub
+dontinline,*.*_sample_jmhStub
+dontinline,*.*_ss_jmhStub
+dontinline,*.*_thrpt_jmhStub
+inline,lambdasinaction/chap7/ParallelStreamBenchmark.iterativeSum
+inline,lambdasinaction/chap7/ParallelStreamBenchmark.parallelRangedSum
+inline,lambdasinaction/chap7/ParallelStreamBenchmark.parallelSum
+inline,lambdasinaction/chap7/ParallelStreamBenchmark.rangedSum
+inline,lambdasinaction/chap7/ParallelStreamBenchmark.sequentialSum
+inline,lambdasinaction/chap7/ParallelStreamBenchmark.tearDown
