@@ -8,18 +8,26 @@
 
 ## chapter 2 입출금 내역 분석기
 - [학습한 코드](https://github.com/jihwooon/java-in-action/pull/99)
+![chapter2](https://github.com/jihwooon/java-in-action/assets/68071599/47f88927-3a21-47b8-88fe-241ecc97947f)
+
 
 ## chapter 3 입출금 내역 분석기 확장판
 - [학습한 코드](https://github.com/jihwooon/java-in-action/pull/100)
+![chapter3](https://github.com/jihwooon/java-in-action/assets/68071599/4a0f15a9-61b4-4aaa-8bc9-a39b16dac0dc)
+
+
 
 ## chapter 4 문서 관리 시스템
 - [학습한 코드](https://github.com/jihwooon/java-in-action/pull/102)
+![chapter4](https://github.com/jihwooon/java-in-action/assets/68071599/bb5f6e2c-924f-439b-a84e-2f50246b4f3f)
 
 ## chapter 6 트우터
 - [학습한 코드](https://github.com/jihwooon/java-in-action/pull/104)
+![chapter6](https://github.com/jihwooon/java-in-action/assets/68071599/eff2ba29-8705-45ba-81e0-d921118bb164)
 
 ## chapter 7 트우터 확장판
 - [학습한 코드](https://github.com/jihwooon/java-in-action/pull/105)
+![chapter7](https://github.com/jihwooon/java-in-action/assets/68071599/8d76559a-7b33-4f1a-a335-4d91119bee75)
 
 ## 참조
 - [실전 자바 소프트웨어 개발](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=242651862)
