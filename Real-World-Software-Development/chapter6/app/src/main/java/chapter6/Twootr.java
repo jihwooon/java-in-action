@@ -25,7 +25,7 @@ public class Twootr {
   }
 
   public Optional<SenderEndPoint> onLogon(final String userId, final String password,
-      final ReceiverEndPoint receiver) {
+      final ReceiverEndPoint receiverEndPoint) {
     Objects.requireNonNull(userId, "userId");
     Objects.requireNonNull(password, "password");
 
@@ -35,6 +35,16 @@ public class Twootr {
           byte[] hashedPassword = KeyGenerator.hash(password, userSameId.getSalt());
           return Arrays.equals(hashedPassword, userSameId.getPassword());
         });
+
+    authenticatedUser.ifPresent(user -> {
+      user.onLogon(receiverEndPoint);
+      twootRepository.query(
+          new TwootQuery()
+              .inUsers(user.getFollowing())
+              .lastSeenPosition(user.getLastSeenPosition()),
+          user::receiveTwoot);
+      userRepository.update(user);
+    });
 
     return authenticatedUser.map(user -> new SenderEndPoint(user, this));
   }
