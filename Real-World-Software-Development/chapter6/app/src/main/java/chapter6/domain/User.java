@@ -1,6 +1,10 @@
 package chapter6.domain;
 
+import static chapter6.status.FollowStatus.ALREADY_FOLLOWING;
+import static chapter6.status.FollowStatus.SUCCESS;
+
 import chapter6.ReceiverEndPoint;
+import chapter6.status.FollowStatus;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -10,8 +14,11 @@ public class User {
   private final String id;
   private final byte[] password;
   private final byte[] salt;
-  private final Set<User> followers = new HashSet<>();
 
+  private final Set<User> followers = new HashSet<>();
+  private final Set<String> following = new HashSet<>();
+
+  private Position lastSeenPosition;
   private ReceiverEndPoint receiverEndPoint;
 
   public User(String id, byte[] password, byte[] salt) {
@@ -36,7 +43,7 @@ public class User {
     return followers.stream();
   }
 
-  void onLogon(final ReceiverEndPoint receiverEndPoint) {
+  public void onLogon(final ReceiverEndPoint receiverEndPoint) {
     this.receiverEndPoint = receiverEndPoint;
   }
 
@@ -53,8 +60,25 @@ public class User {
     return false;
   }
 
+  public Set<String> getFollowing() {
+    return following;
+  }
+
   public void onLogoff() {
     receiverEndPoint = null;
+  }
+
+  public Position getLastSeenPosition() {
+    return lastSeenPosition;
+  }
+
+  public FollowStatus addFollower(final User user) {
+    if (followers.add(user)) {
+      user.following.add(id);
+      return SUCCESS;
+    } else {
+      return ALREADY_FOLLOWING;
+    }
   }
 
   @Override
@@ -63,4 +87,5 @@ public class User {
         "id='" + id + '\'' +
         '}';
   }
+
 }
