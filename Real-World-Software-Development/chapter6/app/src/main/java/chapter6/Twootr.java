@@ -1,8 +1,15 @@
 package chapter6;
 
-import static chapter6.FollowStatus.ALREADY_FOLLOWING;
-import static chapter6.FollowStatus.SUCCESS;
+import static chapter6.status.FollowStatus.ALREADY_FOLLOWING;
+import static chapter6.status.FollowStatus.SUCCESS;
 
+import chapter6.domain.KeyGenerator;
+import chapter6.domain.Position;
+import chapter6.domain.Twoot;
+import chapter6.domain.User;
+import chapter6.repository.TwootRepository;
+import chapter6.repository.UserRepository;
+import chapter6.status.FollowStatus;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,7 +25,7 @@ public class Twootr {
   }
 
   public Optional<SenderEndPoint> onLogon(final String userId, final String password,
-      final ReceiverEndPoint receiver) {
+      final ReceiverEndPoint receiverEndPoint) {
     Objects.requireNonNull(userId, "userId");
     Objects.requireNonNull(password, "password");
 
@@ -28,6 +35,16 @@ public class Twootr {
           byte[] hashedPassword = KeyGenerator.hash(password, userSameId.getSalt());
           return Arrays.equals(hashedPassword, userSameId.getPassword());
         });
+
+    authenticatedUser.ifPresent(user -> {
+      user.onLogon(receiverEndPoint);
+      twootRepository.query(
+          new TwootQuery()
+              .inUsers(user.getFollowing())
+              .lastSeenPosition(user.getLastSeenPosition()),
+          user::receiveTwoot);
+      userRepository.update(user);
+    });
 
     return authenticatedUser.map(user -> new SenderEndPoint(user, this));
   }
