@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BusinessRuleEngine {
-
     private final List<Rule> rules;
     private final Facts facts;
 

@@ -2,6 +2,7 @@ package modern;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -31,6 +32,8 @@ import org.junit.jupiter.api.Test;
 public class 문자열을변환 {
 
     private int stringToInt(String str) {
+        ArrayList arrayList = new ArrayList<String>();
+
         int answer = 0;
         if (!str.matches("\\d+")) {
             throw new NumberFormatException();

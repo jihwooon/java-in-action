@@ -39,6 +39,7 @@ public class 반복되지않는첫번째문자찾기 {
                 return entry.getKey().toString();
             }
         }
+        System.out.println();
 
         return String.valueOf(Character.MIN_VALUE);
     }
